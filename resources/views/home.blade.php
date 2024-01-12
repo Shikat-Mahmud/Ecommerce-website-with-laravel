@@ -1595,7 +1595,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="{{ asset('/') }}frontend/vendor/daterangepicker/daterangepicker.js"></script>
 <!--===============================================================================================-->
 	<script src="{{ asset('/') }}frontend/vendor/slick/slick.min.js"></script>
-	<script src="js/slick-custom.js"></script>
+	<script src="{{ asset('/') }}frontend/js/slick-custom.js"></script>
 <!--===============================================================================================-->
 	<script src="{{ asset('/') }}frontend/vendor/parallax100/parallax100.js"></script>
 	<script>
