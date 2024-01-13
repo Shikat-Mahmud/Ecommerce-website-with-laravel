@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,9 @@ use App\Http\Controllers\HomeController;
 */
 
 
+// backend route
+Route::get('/admin',[AdminController::class,'index']);
+
+
+// frontend route
 Route::get('/',[HomeController::class,'index']);
