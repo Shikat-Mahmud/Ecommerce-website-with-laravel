@@ -1026,4 +1026,4 @@
 		</div>
 	</section>
 
-@endsection
+@endsection 
