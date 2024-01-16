@@ -11,6 +11,6 @@ class AdminController extends Controller
     }
 
     public function dashboard(){
-        return view('admin.admin_master');
+        return view('admin.dashboard');
     }
 }
