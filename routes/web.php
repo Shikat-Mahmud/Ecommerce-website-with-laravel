@@ -19,6 +19,7 @@ use App\Http\Controllers\AdminController;
 // backend route
 Route::get('/admin',[AdminController::class,'index']);
 Route::get('/dashboard',[AdminController::class,'dashboard']);
+Route::get('/admin-dashboard',[AdminController::class,'showDashboard']);
 
 
 // frontend route
