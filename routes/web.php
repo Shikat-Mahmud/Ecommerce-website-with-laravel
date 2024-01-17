@@ -19,9 +19,10 @@ use App\Http\Controllers\Admin\SuperAdminController;
 
 // backend route
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/dashboard',[SuperAdminController::class,'dashboard']);
 Route::post('/admin-dashboard',[AdminController::class,'showDashboard']);
 
+Route::get('/dashboard',[SuperAdminController::class,'dashboard']);
+Route::get('/logout',[SuperAdminController::class,'logout']);
 
 // frontend route
 Route::get('/',[HomeController::class,'index']);
