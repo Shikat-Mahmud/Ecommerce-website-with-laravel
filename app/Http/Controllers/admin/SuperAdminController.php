@@ -12,15 +12,30 @@ Session_start();
 class SuperAdminController extends Controller
 {
     public function dashboard(){
+        $this->AdminAuthCheck();
         return view('admin.dashboard');
     }
 
-    
+
     // logout
 
     public function logout(){
         Session::flush();
         return Redirect::to('/admin');
+    }
+
+
+    // admin auth check
+
+    public function AdminAuthCheck(){
+        $admin_id=Session::get('admin_id');
+
+        if($admin_id){
+            return;
+        }
+        else{
+            return Redirect::to('/admin')->send();
+        }
     }
 
 }
