@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
-use App\Model\Admin;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use App\Models\Admin;
 use Session;
 
 Session_start();
@@ -11,12 +13,13 @@ Session_start();
 class AdminController extends Controller
 {
     public function index(){
+        session()->forget('message');
         return view('admin.admin_login');
     }
 
-    public function dashboard(){
-        return view('admin.dashboard');
-    }
+
+    
+    // Admin login
 
     public function showDashboard(Request $request){
 
@@ -25,15 +28,13 @@ class AdminController extends Controller
         $result=Admin::where('admin_email',$admin_email)->where('admin_password',$admin_password)->first();
 
         if($result){
-            session::put('admin_id', $result->admin_id);
-            session::put('admin_name', $result->admin_name);
+            Session::put('admin_id', $result->admin_id);
+            Session::put('admin_name', $result->admin_name);
             return Redirect::to('/dashboard');
         }
         else{
-            session::put('message', 'Email or Password invalid');
-            return Redirect::to('/admin');
+            return redirect('/admin')->withErrors(['message' => 'Email or Password invalid'])->withInput();
         }
     }
-
-
 }
+

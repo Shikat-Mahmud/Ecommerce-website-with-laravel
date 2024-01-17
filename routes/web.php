@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\SuperAdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,9 @@ use App\Http\Controllers\AdminController;
 
 
 // backend route
-Route::get('/admin',[AdminController::class,'index']);
-Route::get('/dashboard',[AdminController::class,'dashboard']);
-Route::get('/admin-dashboard',[AdminController::class,'showDashboard']);
+Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/dashboard',[SuperAdminController::class,'dashboard']);
+Route::post('/admin-dashboard',[AdminController::class,'showDashboard']);
 
 
 // frontend route
