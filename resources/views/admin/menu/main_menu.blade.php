@@ -8,7 +8,7 @@
 						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
 						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li> -->
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Category</span><span class="label label-important"> 3 </span></a>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Category</span></a>
 							<ul>
 								<li><a class="submenu" href="{{ url('/categories/create') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Category</span></a></li>
 								<li><a class="submenu" href="{{ url('/categories') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Category List</span></a></li>

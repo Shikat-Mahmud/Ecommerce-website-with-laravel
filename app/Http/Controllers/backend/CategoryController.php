@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -12,7 +13,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('backend.category.index');
+        $categories = Category::all();
+
+        return view('backend.category.index', compact('categories'));
     }
 
     /**
@@ -27,9 +30,25 @@ class CategoryController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-    }
+{
+    $category = new Category;
+    $category->name = $request->name;
+    $category->description = $request->description;
+    $category->image = $request->image->store('category');
+
+    // if ($request->hasFile('image')) {
+    //     $file = $request->file('image');
+    //     $extension = $file->getClientOriginalExtension();
+    //     $filename = time().'.'.$extension;
+    //     $file->move('category', $filename);
+    //     $category->image = $filename;
+    // }
+
+    $category->save();
+
+    return redirect()->back()->with('message', 'Category created successfully');
+}
+
 
     /**
      * Display the specified resource.
