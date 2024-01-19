@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-@section('title','Edit Category')
+@section('title','Add Category')
 @section('admin_content')
 
 @if ($errors->any())
@@ -38,26 +38,37 @@
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header" data-original-title>
-            <h2><i class="halflings-icon edit"></i><span class="break"></span>Edit Category</h2>
+            <h2><i class="halflings-icon edit"></i><span class="break"></span>Add Sub Category</h2>
 
         </div>
 
         <div class="box-content">
-            <form class="form-horizontal" action="{{ url('/categories/' .$category->id) }}" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{ url('/sub-categories') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')
                 <fieldset>
                     <div class="control-group">
-                        <label class="control-label" for="date01">Category Name</label>
+                        <label class="control-label" for="date01">Sub Category Name</label>
                         <div class="controls">
-                            <input type="text" class="input-xlarge" name="name" value="{{ $category->name }}">
+                            <input type="text" class="input-xlarge" name="name" required>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="date01">Select Category</label>
+                        <div class="controls">
+                            <select class="input-xlarge" name="category" style="magrgin-left:20px;">
+                                <option value="">Select Category</option>
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endforeach
+                        </select>
                         </div>
                     </div>
 
                     <div class="control-group hidden-phone">
-                        <label class="control-label" for="textarea2">Category Description</label>
+                        <label class="control-label" for="textarea2">Sub Category Description</label>
                         <div class="controls">
-                            <textarea class="cleditor" name="description" rows="3" >{{ $category->description }}</textarea>
+                            <textarea class="cleditor" name="description" rows="3" required></textarea>
                         </div>
 
                     </div>
@@ -72,16 +83,16 @@
                             </div>
                         </div> -->
 
-                    <div class="control-group">
+                    <!-- <div class="control-group">
                         <label class="control-label">Image Upload</label>
                         <div class="controls">
                             <input type="file" name="image">
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button type="submit" class="btn btn-primary">Add Sub Category</button>
                         <button type="reset" class="btn btn-danger">Cancel</button>
                     </div>
                 </fieldset>
@@ -91,6 +102,5 @@
     </div><!--/span-->
 </div><!--/row-->
 </div><!--/row-->
-
 
 @endsection

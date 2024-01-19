@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SuperAdminController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\SubCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,7 @@ use App\Http\Controllers\Backend\CategoryController;
 */
 
 
-// admin route
+//============== admin route==============//
 Route::get('/admin', [AdminController::class, 'index']);
 Route::post('/admin-dashboard',[AdminController::class,'showDashboard']);
 
@@ -27,10 +28,19 @@ Route::get('/logout',[SuperAdminController::class,'logout']);
 
 
 
-// frontend route
+//============== fronten route==============//
 Route::get('/',[HomeController::class,'index']);
 
 
 
-// backend route
+//============== backend route==============//
+
+//category routes
 Route::resource('/categories', CategoryController::class);
+Route::get('/cat-status/{category}', [CategoryController::class, 'changeStatus'])->name('change-status');
+
+
+//sub category routes
+Route::resource('/sub-categories', SubCategoryController::class);
+Route::get('/cat-status/{subcategory}', [SubCategoryController::class, 'changeStatus'])->name('change-status');
+
