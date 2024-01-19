@@ -44,8 +44,8 @@
 						<th style="width: 15%;">Category Name</th>
 						<th style="width: 30%;">Description</th>
 						<th style="width: 15%;">Image</th>
-						<th style="width: 15%;">Status</th>
-						<th style="width: 20%;">Actions</th>
+						<th style="width: 10%;">Status</th>
+						<th style="width: 25%;">Actions</th>
 					</tr>
 				</thead>
 				@foreach($categories as $category)
@@ -67,7 +67,7 @@
 						</td>
 						<td class="row">
 							<div class="span2"></div>
-							<div class="span2" style="margin-right: 1px;">
+							<div class="span2">
 								@if($category->status==1)
 								<a class="btn btn-success" href="{{ url('/cat-status/' . $category->id) }}">
 									<i class="halflings-icon white thumbs-down"></i>
@@ -78,7 +78,7 @@
 								</a>
 								@endif
 							</div>
-							<div class="span2" style="margin-right: 1px;">
+							<div class="span2">
 								<a class="btn btn-info" href="{{ url('/categories/' . $category->id . '/edit') }}">
 									<i class="halflings-icon white edit"></i>
 								</a>

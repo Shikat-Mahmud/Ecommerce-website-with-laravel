@@ -40,17 +40,19 @@
 			<table class="table table-striped table-bordered bootstrap-datatable datatable">
 				<thead>
 					<tr>
-						<th style="width: 5%;">Id</th>
+						<th style="width: 5%;">Sub Cat Id</th>
 						<th style="width: 15%;">Sub Category Name</th>
+						<th style="width: 15%;">Category Name</th>
 						<th style="width: 30%;">Description</th>
-						<th style="width: 15%;">Status</th>
-						<th style="width: 20%;">Actions</th>
+						<th style="width: 10%;">Status</th>
+						<th style="width: 25%;">Actions</th>
 					</tr>
 				</thead>
 				@foreach($subcategories as $subcategory)
 				<tbody>
 					<tr>
 						<td>{{ $subcategory->id }}</td>
+						<td class="center">{{ $subcategory->name }}</td>
 						<td class="center">{{ $subcategory->name }}</td>
 						<td class="center">{!! $subcategory->description !!}</td>
 						<td class="center">
@@ -62,7 +64,7 @@
 						</td>
 						<td class="row">
 							<div class="span2"></div>
-							<div class="span2" style="margin-right: 1px;">
+							<div class="span2">
 								@if($subcategory->status==1)
 								<a class="btn btn-success" href="{{ url('/subcat-status/' . $subcategory->id) }}">
 									<i class="halflings-icon white thumbs-down"></i>
@@ -73,7 +75,7 @@
 								</a>
 								@endif
 							</div>
-							<div class="span2" style="margin-right: 1px;">
+							<div class="span2">
 								<a class="btn btn-info" href="{{ url('/sub-categories/' . $subcategory->id . '/edit') }}">
 									<i class="halflings-icon white edit"></i>
 								</a>

@@ -55,17 +55,23 @@ class SubCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(SubCategory $subcategory)
     {
-        //
+        return view('backend.subcategory.edit', compact('subcategory'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, SubCategory $subcategory)
     {
-        //
+        $update=$subcategory->update([
+            'name'=> $request->name,
+            'description'=> $request->description,
+        ]);
+
+        if($update)
+            return redirect('/sub-categories')->with('message','Sub Category Updated Successfully');
     }
 
     /**
