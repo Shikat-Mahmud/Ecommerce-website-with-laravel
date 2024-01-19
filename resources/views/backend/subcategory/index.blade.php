@@ -53,7 +53,7 @@
 					<tr>
 						<td>{{ $subcategory->id }}</td>
 						<td class="center">{{ $subcategory->name }}</td>
-						<td class="center">{{ $subcategory->name }}</td>
+						<td class="center">{{ $subcategory->category->name }}</td>
 						<td class="center">{!! $subcategory->description !!}</td>
 						<td class="center">
 							@if($subcategory->status==1)

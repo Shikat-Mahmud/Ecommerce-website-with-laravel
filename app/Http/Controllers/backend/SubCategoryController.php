@@ -57,7 +57,8 @@ class SubCategoryController extends Controller
      */
     public function edit(SubCategory $subcategory)
     {
-        return view('backend.subcategory.edit', compact('subcategory'));
+        $categories=Category::all();
+        return view('backend.subcategory.edit', compact('subcategory','categories'));
     }
 
     /**
@@ -67,6 +68,7 @@ class SubCategoryController extends Controller
     {
         $update=$subcategory->update([
             'name'=> $request->name,
+            'cat_id'=> $request->category,
             'description'=> $request->description,
         ]);
 
@@ -77,9 +79,23 @@ class SubCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(SubCategory $subcategory)
     {
-        //
+        try {
+            $delete = $subcategory->delete();
+    
+            if ($delete) {
+                return redirect()->back()->with('message', 'Sub Category Deleted Successfully');
+            } else {
+                return redirect()->back()->with('error', 'Error deleting Sub Category');
+            }
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error deleting subcategory: ' . $e->getMessage());
+    
+            // Return an error message or handle it as needed
+            return redirect()->back()->with('error', 'Error deleting Sub Category');
+        }
     }
 
     public function changeStatus(SubCategory $subcategory)

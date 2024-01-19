@@ -43,7 +43,7 @@
         </div>
 
         <div class="box-content">
-            <form class="form-horizontal" action="{{ url('/sub-categories/' .$subcategory->id) }}" method="post" enctype="multipart/form-data">
+            <form class="form-horizontal" action="{{ url('/sub-categories/' .$subcategory->id) }}" method="post">
                 @csrf
                 @method('PUT')
                 <fieldset>
@@ -54,10 +54,27 @@
                         </div>
                     </div>
 
+                    <div class="control-group">
+                        <label class="control-label" for="date01">Select Category</label>
+                        <div class="controls">
+                            <select class="input-xlarge" name="category" style="magrgin-left:20px;">
+                                <option value="">Select Category</option>
+                                @foreach($categories as $category)
+                                <option value="{{ $category->id }}" {{ $category->id == $subcategory->cat_id ?
+                                    'selected' : '' }}>
+                                    {{ $category->name }}
+                                </option>
+                                @endforeach
+                            </select>
+
+                        </div>
+                    </div>
+
                     <div class="control-group hidden-phone">
                         <label class="control-label" for="textarea2">Sub Category Description</label>
                         <div class="controls">
-                            <textarea class="cleditor" name="description" rows="3" >{{ $subcategory->description }}</textarea>
+                            <textarea class="cleditor" name="description"
+                                rows="3">{{ $subcategory->description }}</textarea>
                         </div>
 
                     </div>
