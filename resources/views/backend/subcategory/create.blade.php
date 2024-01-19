@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-@section('title','Add Category')
+@section('title','Add Sub Category')
 @section('admin_content')
 
 @if ($errors->any())
@@ -43,6 +43,7 @@
         </div>
 
         <div class="box-content">
+
             <form class="form-horizontal" action="{{ url('/sub-categories') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <fieldset>

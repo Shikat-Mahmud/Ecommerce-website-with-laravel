@@ -14,7 +14,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+        $subcategories = SubCategory::all();
+
+        return view('backend.category.index', compact('subcategories'));
     }
 
     /**
@@ -30,9 +32,17 @@ class SubCategoryController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-    }
+{
+    $subcategory = new SubCategory;
+    $subcategory->cat_id=$request->category;
+    $subcategory->name = $request->name;
+    $subcategory->description = $request->description;
+
+    $subcategory->save();
+
+    return redirect()->back()->with('message', 'Sub Category created successfully');
+}
+
 
     /**
      * Display the specified resource.
