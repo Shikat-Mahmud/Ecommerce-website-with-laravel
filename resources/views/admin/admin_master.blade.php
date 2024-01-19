@@ -50,7 +50,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="index.html"><span>Metro</span></a>
+				<a class="brand" href="index.html"><span>Shikat Mahmud</span></a>
 								
 				@include('admin.menu.header_menu')
 				
