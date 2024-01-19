@@ -41,7 +41,7 @@
 				<thead>
 					<tr>
 						<th style="width: 5%;">Id</th>
-						<th style="width: 15%;">Category Name</th>
+						<th style="width: 15%;">Sub Category Name</th>
 						<th style="width: 30%;">Description</th>
 						<th style="width: 15%;">Status</th>
 						<th style="width: 20%;">Actions</th>
@@ -64,22 +64,22 @@
 							<div class="span2"></div>
 							<div class="span2" style="margin-right: 1px;">
 								@if($subcategory->status==1)
-								<a class="btn btn-success" href="{{ url('/cat-status/' . $category->id) }}">
+								<a class="btn btn-success" href="{{ url('/cat-status/' . $subcategory->id) }}">
 									<i class="halflings-icon white thumbs-down"></i>
 								</a>
 								@else
-								<a class="btn btn-danger" href="{{ url('/cat-status/' . $category->id) }}">
+								<a class="btn btn-danger" href="{{ url('/cat-status/' . $subcategory->id) }}">
 									<i class="halflings-icon white thumbs-up"></i>
 								</a>
 								@endif
 							</div>
 							<div class="span2" style="margin-right: 1px;">
-								<a class="btn btn-info" href="{{ url('/categories/' . $category->id . '/edit') }}">
+								<a class="btn btn-info" href="{{ url('/categories/' . $subcategory->id . '/edit') }}">
 									<i class="halflings-icon white edit"></i>
 								</a>
 							</div>
 							<div class="span2">
-							<form action="{{ url('/categories/' .$category->id) }}" method="post" >
+							<form action="{{ url('/categories/' .$subcategory->id) }}" method="post" >
 								@csrf
 								@method('DELETE')
 								<button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>

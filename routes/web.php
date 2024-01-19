@@ -19,7 +19,7 @@ use App\Http\Controllers\Backend\SubCategoryController;
 */
 
 
-//============== admin route==============//
+//============== admin route ==============//
 Route::get('/admin', [AdminController::class, 'index']);
 Route::post('/admin-dashboard',[AdminController::class,'showDashboard']);
 
@@ -28,12 +28,12 @@ Route::get('/logout',[SuperAdminController::class,'logout']);
 
 
 
-//============== fronten route==============//
+//============== fronten route ==============//
 Route::get('/',[HomeController::class,'index']);
 
 
 
-//============== backend route==============//
+//============== backend route ==============//
 
 //category routes
 Route::resource('/categories', CategoryController::class);

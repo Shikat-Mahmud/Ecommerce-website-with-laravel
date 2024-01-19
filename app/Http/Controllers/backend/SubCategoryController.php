@@ -16,7 +16,7 @@ class SubCategoryController extends Controller
     {
         $subcategories = SubCategory::all();
 
-        return view('backend.category.index', compact('subcategories'));
+        return view('backend.subcategory.index', compact('subcategories'));
     }
 
     /**
