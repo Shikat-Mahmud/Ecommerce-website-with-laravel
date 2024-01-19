@@ -42,5 +42,5 @@ Route::get('/cat-status/{category}', [CategoryController::class, 'changeStatus']
 
 //sub category routes
 Route::resource('/sub-categories', SubCategoryController::class);
-Route::get('/cat-status/{subcategory}', [SubCategoryController::class, 'changeStatus'])->name('change-status');
+Route::get('/subcat-status/{subcategory}', [SubCategoryController::class, 'changeStatus'])->name('change-status');
 

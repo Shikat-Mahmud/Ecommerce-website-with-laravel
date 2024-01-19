@@ -75,4 +75,20 @@ class SubCategoryController extends Controller
     {
         //
     }
+
+    public function changeStatus(SubCategory $subcategory)
+    {
+        try {
+            $subcategory->status = $subcategory->status == 1 ? 0 : 1;
+            $subcategory->save();
+
+            return redirect()->back()->with('message', 'Status Change Successfully');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error changing category status: ' . $e->getMessage());
+
+            // Return an error message or handle it as needed
+            return redirect()->back()->with('error', 'Error changing category status');
+        }
+    }
 }
