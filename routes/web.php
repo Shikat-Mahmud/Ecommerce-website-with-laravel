@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\SuperAdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\BrandController;
+use App\Http\Controllers\Backend\UnitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,5 +51,5 @@ Route::resource('brands', BrandController::class);
 Route::get('/brand-status/{brand}', [BrandController::class, 'changeStatus'])->name('change-status');
 
 //unit routes
-Route::resource('units', BrandController::class);
-Route::get('/unit-status/{unit}', [BrandController::class, 'changeStatus'])->name('change-status');
+Route::resource('units', UnitController::class);
+Route::get('/unit-status/{unit}', [UnitController::class, 'changeStatus'])->name('change-status');
