@@ -14,7 +14,9 @@ class UnitController extends Controller
      */
     public function index()
     {
-        //
+        $units = Unit::all();
+
+        return view('backend.unit.index', compact('units'));
     }
 
     /**
@@ -30,7 +32,12 @@ class UnitController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $unit = new Unit;
+        $unit->name = $request->name;
+
+        $unit->save();
+
+        return redirect()->back()->with('message', 'Unit created successfully');
     }
 
     /**
