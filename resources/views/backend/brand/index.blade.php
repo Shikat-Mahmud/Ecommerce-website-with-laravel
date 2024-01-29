@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-@section('title','Categories')
+@section('title','Brands')
 @section('admin_content')
 
 
@@ -28,7 +28,7 @@
 <div class="row-fluid sortable">
 	<div class="box span12">
 		<div class="box-header" data-original-title>
-			<h2><i class="halflings-icon user"></i><span class="break"></span>Categories</h2>
+			<h2><i class="halflings-icon user"></i><span class="break"></span>Brands</h2>
 
 			<div class="box-icon">
 				<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
@@ -41,25 +41,20 @@
 				<thead>
 					<tr>
 						<th style="width: 5%;">Id</th>
-						<th style="width: 15%;">Category Name</th>
+						<th style="width: 15%;">Brand Name</th>
 						<th style="width: 30%;">Description</th>
-						<th style="width: 15%;">Image</th>
 						<th style="width: 10%;">Status</th>
 						<th style="width: 25%;">Actions</th>
 					</tr>
 				</thead>
-				@foreach($categories as $category)
+				@foreach($brands as $brand)
 				<tbody>
 					<tr>
-						<td>{{ $category->id }}</td>
-						<td class="center">{{ $category->name }}</td>
-						<td class="center">{!! $category->description !!}</td>
+						<td>{{ $brand->id }}</td>
+						<td class="center">{{ $brand->name }}</td>
+						<td class="center">{!! $brand->description !!}</td>
 						<td class="center">
-							<img src="{{ asset('/storage/' . $category->image) }}" alt="image"
-								style="width: auto; height: 100px; margin: 2px;">
-						</td>
-						<td class="center">
-							@if($category->status==1)
+							@if($brand->status==1)
 							<span class="label label-success">Active</span>
 							@else
 							<span class="label label-danger">Deactive</span>
@@ -68,23 +63,23 @@
 						<td class="row">
 							<div class="span2"></div>
 							<div class="span2">
-								@if($category->status==1)
-								<a class="btn btn-success" href="{{ url('/cat-status/' . $category->id) }}">
+								@if($brand->status==1)
+								<a class="btn btn-success" href="{{ url('/brand-status/' . $brand->id) }}">
 									<i class="halflings-icon white thumbs-down"></i>
 								</a>
 								@else
-								<a class="btn btn-danger" href="{{ url('/cat-status/' . $category->id) }}">
+								<a class="btn btn-danger" href="{{ url('/brand-status/' . $brand->id) }}">
 									<i class="halflings-icon white thumbs-up"></i>
 								</a>
 								@endif
 							</div>
 							<div class="span2">
-								<a class="btn btn-info" href="{{ url('/categories/' . $category->id . '/edit') }}">
+								<a class="btn btn-info" href="{{ url('/brands/' . $brand->id . '/edit') }}">
 									<i class="halflings-icon white edit"></i>
 								</a>
 							</div>
 							<div class="span2">
-							<form action="{{ url('/categories/' .$category->id) }}" method="post" >
+							<form action="{{ url('/brands/' .$brand->id) }}" method="post" >
 								@csrf
 								@method('DELETE')
 								<button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>
