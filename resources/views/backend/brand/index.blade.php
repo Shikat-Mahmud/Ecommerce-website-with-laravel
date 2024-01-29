@@ -41,8 +41,8 @@
 				<thead>
 					<tr>
 						<th style="width: 5%;">Id</th>
-						<th style="width: 15%;">Brand Name</th>
-						<th style="width: 30%;">Description</th>
+						<th style="width: 20%;">Brand Name</th>
+						<th style="width: 40%;">Description</th>
 						<th style="width: 10%;">Status</th>
 						<th style="width: 25%;">Actions</th>
 					</tr>

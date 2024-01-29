@@ -72,4 +72,20 @@ class BrandController extends Controller
     {
         //
     }
+
+    public function changeStatus(Brand $brand)
+    {
+        try {
+            $brand->status = $brand->status == 1 ? 0 : 1;
+            $brand->save();
+
+            return redirect()->back()->with('message', 'Status Change Successfully');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error changing brand status: ' . $e->getMessage());
+
+            // Return an error message or handle it as needed
+            return redirect()->back()->with('error', 'Error changing brand status');
+        }
+    }
 }
