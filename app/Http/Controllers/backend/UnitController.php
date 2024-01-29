@@ -71,4 +71,20 @@ class UnitController extends Controller
     {
         //
     }
+
+    public function changeStatus(Unit $unit)
+    {
+        try {
+            $unit->status = $unit->status == 1 ? 0 : 1;
+            $unit->save();
+
+            return redirect()->back()->with('message', 'Status Change Successfully');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error changing unit status: ' . $e->getMessage());
+
+            // Return an error message or handle it as needed
+            return redirect()->back()->with('error', 'Error changing unit status');
+        }
+    }
 }
