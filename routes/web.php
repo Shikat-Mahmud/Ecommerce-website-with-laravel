@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SuperAdminController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,3 +45,6 @@ Route::get('/cat-status/{category}', [CategoryController::class, 'changeStatus']
 Route::resource('sub-categories', SubCategoryController::class);
 Route::get('/subcat-status/{subcategory}', [SubCategoryController::class, 'changeStatus'])->name('change-status');
 
+//brand routes
+Route::resource('brands', BrandController::class);
+Route::get('/brand-status/{brand}', [BrandController::class, 'changeStatus'])->name('change-status');
