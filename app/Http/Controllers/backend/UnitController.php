@@ -51,17 +51,23 @@ class UnitController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Unit $unit)
     {
-        //
+        return view('backend.unit.edit', compact('unit'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Unit $unit)
     {
-        //
+        $update=$unit->update([
+            'name'=> $request->name,
+            'description'=> $request->description,
+        ]);
+
+        if($update)
+            return redirect('/units')->with('message','Unit Updated Successfully');
     }
 
     /**
