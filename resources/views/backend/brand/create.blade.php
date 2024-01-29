@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-@section('title','Add Category')
+@section('title','Add Brand')
 @section('admin_content')
 
 @if ($errors->any())
