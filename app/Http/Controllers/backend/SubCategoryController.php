@@ -24,24 +24,23 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        $categories=Category::all();
-        return view('backend.subcategory.create',compact('categories'));
+        $categories = Category::all();
+        return view('backend.subcategory.create', compact('categories'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    $subcategory = new SubCategory;
-    $subcategory->cat_id=$request->category;
-    $subcategory->name = $request->name;
-    $subcategory->description = $request->description;
+    {
+        $subcategory = new SubCategory;
+        $subcategory->cat_id = $request->category;
+        $subcategory->name = $request->name;
+        $subcategory->description = $request->description;
 
-    $subcategory->save();
-
-    return redirect()->back()->with('message', 'Sub Category created successfully');
-}
+        $subcategory->save();
+        return redirect()->back()->with('message', 'Sub Category created successfully');
+    }
 
 
     /**
@@ -55,51 +54,55 @@ class SubCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SubCategory $subcategory)
+    public function edit($id)
     {
-        $categories=Category::all();
-        return view('backend.subcategory.edit', compact('subcategory','categories'));
+        $subcategory = SubCategory::findOrFail($id);
+        
+        $categories = Category::all();
+        return view('backend.subcategory.edit', compact('subcategory', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, SubCategory $subcategory)
+    public function update(Request $request,  $id)
     {
-        $update=$subcategory->update([
-            'name'=> $request->name,
-            'cat_id'=> $request->category,
-            'description'=> $request->description,
+        $this->validate($request, [ 
+            'name'=> 'required',
+            'description'=> 'required',
+        ]);
+        
+
+        $subcategory = SubCategory::findOrFail($id);
+
+
+        $update = $subcategory->update([
+            'name' => $request->name,
+            'cat_id' => $request->category,
+            'description' => $request->description,
         ]);
 
-        if($update)
-            return redirect('/sub-categories')->with('message','Sub Category Updated Successfully');
+        if ($update)
+            return redirect('/sub-categories')->with('message', 'Sub Category Updated Successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SubCategory $subcategory)
+    public function destroy($id)
     {
-        try {
-            $delete = $subcategory->delete();
-    
-            if ($delete) {
-                return redirect()->back()->with('message', 'Sub Category Deleted Successfully');
-            } else {
-                return redirect()->back()->with('error', 'Error deleting Sub Category');
-            }
-        } catch (\Exception $e) {
-            // Log the error
-            \Log::error('Error deleting subcategory: ' . $e->getMessage());
-    
-            // Return an error message or handle it as needed
-            return redirect()->back()->with('error', 'Error deleting Sub Category');
-        }
+        $subcategory = SubCategory::findOrFail($id);
+
+        $delete=$subcategory->delete();
+
+        if($delete)
+        return redirect()->back()->with('message', 'Category Deleted Successfully');
     }
 
     public function changeStatus(SubCategory $subcategory)
+    
     {
+       
         try {
             $subcategory->status = $subcategory->status == 1 ? 0 : 1;
             $subcategory->save();

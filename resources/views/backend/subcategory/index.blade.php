@@ -81,13 +81,15 @@
 								</a>
 							</div>
 							<div class="span2">
-							<form action="{{ url('/sub-categories/' .$subcategory->id) }}" method="post" >
+							<!-- <form action="{{ url('/sub-categories/' . $subcategory->id) }}" method="post" > -->
+							<form action="{{ route('sub-categories.destroy', $subcategory->id ) }}" method="post" >
 								@csrf
 								@method('DELETE')
 								<button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>
 							</form>
 							</div>
 							<div class="span2"></div>
+
 						</td>
 				</tbody>
 				@endforeach

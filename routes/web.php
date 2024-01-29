@@ -36,11 +36,11 @@ Route::get('/',[HomeController::class,'index']);
 //============== backend route ==============//
 
 //category routes
-Route::resource('/categories', CategoryController::class);
+Route::resource('categories', CategoryController::class);
 Route::get('/cat-status/{category}', [CategoryController::class, 'changeStatus'])->name('change-status');
 
 
 //sub category routes
-Route::resource('/sub-categories', SubCategoryController::class);
+Route::resource('sub-categories', SubCategoryController::class);
 Route::get('/subcat-status/{subcategory}', [SubCategoryController::class, 'changeStatus'])->name('change-status');
 
