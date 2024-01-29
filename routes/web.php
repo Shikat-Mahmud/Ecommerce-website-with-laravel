@@ -48,3 +48,7 @@ Route::get('/subcat-status/{subcategory}', [SubCategoryController::class, 'chang
 //brand routes
 Route::resource('brands', BrandController::class);
 Route::get('/brand-status/{brand}', [BrandController::class, 'changeStatus'])->name('change-status');
+
+//unit routes
+Route::resource('units', BrandController::class);
+Route::get('/unit-status/{unit}', [BrandController::class, 'changeStatus'])->name('change-status');
