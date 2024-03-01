@@ -64,7 +64,5 @@
         </div>
     </div><!--/span-->
 </div><!--/row-->
-</div><!--/row-->
-
 
 @endsection

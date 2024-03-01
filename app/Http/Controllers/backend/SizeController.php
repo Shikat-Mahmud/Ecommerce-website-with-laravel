@@ -21,7 +21,7 @@ class SizeController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.size.create');
     }
 
     /**
@@ -29,7 +29,13 @@ class SizeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sizes = explode(',',$request->size);
+        $size = new Size;
+        $size->size = json_encode($sizes);
+
+        $size->save();
+
+        return redirect()->back()->with('message', 'Sizes created successfully');
     }
 
     /**

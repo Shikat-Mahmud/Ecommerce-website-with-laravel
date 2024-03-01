@@ -52,7 +52,7 @@
                             <input type="text" class="input-xlarge" name="name" required>
                         </div>
                     </div>
-                    
+
                     <div class="form-actions">
                         <button type="submit" class="btn btn-primary">Add Unit</button>
                         <button type="reset" class="btn btn-danger">Cancel</button>
@@ -62,7 +62,6 @@
 
         </div>
     </div><!--/span-->
-</div><!--/row-->
 </div><!--/row-->
 
 @endsection
