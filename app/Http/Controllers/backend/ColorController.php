@@ -13,7 +13,9 @@ class ColorController extends Controller
      */
     public function index()
     {
-        //
+        $colors = Color::all();
+
+        return view('backend.color.index', compact('colors'));
     }
 
     /**
@@ -21,7 +23,7 @@ class ColorController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.color.create');
     }
 
     /**
@@ -29,7 +31,13 @@ class ColorController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $colors = explode(',',$request->color);
+        $color = new Color;
+        $color->color = json_encode($colors);
+
+        $color->save();
+
+        return redirect()->back()->with('message', 'Colors created successfully');
     }
 
     /**
@@ -45,7 +53,7 @@ class ColorController extends Controller
      */
     public function edit(Color $color)
     {
-        //
+        return view('backend.color.edit', compact('color'));
     }
 
     /**
@@ -53,7 +61,13 @@ class ColorController extends Controller
      */
     public function update(Request $request, Color $color)
     {
-        //
+        $colors = explode(',',$request->color);
+        $update=$color->update([
+            'color'=> json_encode($colors),
+        ]);
+
+        if($update)
+            return redirect('/colors')->with('message','Colors Updated Successfully');
     }
 
     /**
@@ -61,6 +75,25 @@ class ColorController extends Controller
      */
     public function destroy(Color $color)
     {
-        //
+        $delete=$color->delete();
+
+        if($delete)
+        return redirect()->back()->with('message', 'Colors Deleted Successfully');
+    }
+
+    public function changeStatus(Color $color)
+    {
+        try {
+            $color->status = $color->status == 1 ? 0 : 1;
+            $color->save();
+
+            return redirect()->back()->with('message', 'Status Change Successfully');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error changing color status: ' . $e->getMessage());
+
+            // Return an error message or handle it as needed
+            return redirect()->back()->with('error', 'Error changing color status');
+        }
     }
 }

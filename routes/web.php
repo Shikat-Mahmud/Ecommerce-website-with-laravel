@@ -62,4 +62,4 @@ Route::get('/size-status/{size}', [SizeController::class, 'changeStatus'])->name
 
 //color routes
 Route::resource('colors', ColorController::class);
-Route::get('/color-status/{size}', [ColorController::class, 'changeStatus'])->name('change-status');
+Route::get('/color-status/{color}', [ColorController::class, 'changeStatus'])->name('change-status');

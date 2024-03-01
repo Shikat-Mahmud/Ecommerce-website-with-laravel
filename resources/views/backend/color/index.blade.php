@@ -1,5 +1,5 @@
 @extends('admin.admin_master')
-@section('title','Sizes')
+@section('title','Colors')
 @section('admin_content')
 
 
@@ -28,7 +28,7 @@
 <div class="row-fluid sortable">
     <div class="box span12">
         <div class="box-header" data-original-title>
-            <h2><i class="halflings-icon user"></i><span class="break"></span>Sizes</h2>
+            <h2><i class="halflings-icon user"></i><span class="break"></span>Colors</h2>
 
             <div class="box-icon">
                 <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
@@ -41,17 +41,17 @@
                 <thead>
                     <tr>
                         <th style="width: 10%;">Id</th>
-                        <th style="width: 50%;">Sizes</th>
+                        <th style="width: 50%;">Colors</th>
                         <th style="width: 15%;">Status</th>
                         <th style="width: 25%;">Actions</th>
                     </tr>
                 </thead>
-                @foreach($sizes as $size)
+                @foreach($colors as $color)
                 <tbody>
                     <tr>
-                        <td>{{ $size->id }}</td>
+                        <td>{{ $color->id }}</td>
                         <td class="center">
-                            @foreach(Json_decode($size->size) as $item)
+                            @foreach(Json_decode($color->color) as $item)
                             <ul class="span2" style=" background-color: #c4f2ff; text-align: center; padding: 4px;">
                                 {{$item}}
                             </ul>
@@ -59,7 +59,7 @@
                             @endforeach
                         </td>
                         <td class="center">
-                            @if($size->status==1)
+                            @if($color->status==1)
                             <span class="label label-success">Active</span>
                             @else
                             <span class="label label-danger">Deactive</span>
@@ -68,23 +68,23 @@
                         <td class="row">
                             <div class="span2"></div>
                             <div class="span2">
-                                @if($size->status==1)
-                                <a class="btn btn-success" href="{{ url('/size-status/' . $size->id) }}">
+                                @if($color->status==1)
+                                <a class="btn btn-success" href="{{ url('/color-status/' . $color->id) }}">
                                     <i class="halflings-icon white thumbs-down"></i>
                                 </a>
                                 @else
-                                <a class="btn btn-danger" href="{{ url('/size-status/' . $size->id) }}">
+                                <a class="btn btn-danger" href="{{ url('/color-status/' . $color->id) }}">
                                     <i class="halflings-icon white thumbs-up"></i>
                                 </a>
                                 @endif
                             </div>
                             <div class="span2">
-                                <a class="btn btn-info" href="{{ url('/sizes/' . $size->id . '/edit') }}">
+                                <a class="btn btn-info" href="{{ url('/colors/' . $color->id . '/edit') }}">
                                     <i class="halflings-icon white edit"></i>
                                 </a>
                             </div>
                             <div class="span2">
-                                <form action="{{ url('/sizes/' .$size->id) }}" method="post">
+                                <form action="{{ url('/colors/' .$color->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-danger" type="submit"><i
