@@ -13,7 +13,9 @@ class SizeController extends Controller
      */
     public function index()
     {
-        //
+        $sizes = Size::all();
+
+        return view('backend.size.index', compact('sizes'));
     }
 
     /**
