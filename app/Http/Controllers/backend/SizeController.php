@@ -61,12 +61,13 @@ class SizeController extends Controller
      */
     public function update(Request $request, Size $size)
     {
+        $sizes = explode(',',$request->size);
         $update=$size->update([
-            'size'=> $request->size,
+            'size'=> json_encode($sizes),
         ]);
 
         if($update)
-            return redirect('/units')->with('message','Sizes Updated Successfully');
+            return redirect('/sizes')->with('message','Sizes Updated Successfully');
     }
 
     /**
