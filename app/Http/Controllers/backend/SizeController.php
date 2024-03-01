@@ -53,7 +53,7 @@ class SizeController extends Controller
      */
     public function edit(Size $size)
     {
-        //
+        return view('backend.size.edit', compact('size'));
     }
 
     /**
@@ -61,7 +61,12 @@ class SizeController extends Controller
      */
     public function update(Request $request, Size $size)
     {
-        //
+        $update=$size->update([
+            'size'=> $request->size,
+        ]);
+
+        if($update)
+            return redirect('/units')->with('message','Sizes Updated Successfully');
     }
 
     /**
@@ -69,6 +74,25 @@ class SizeController extends Controller
      */
     public function destroy(Size $size)
     {
-        //
+        $delete=$size->delete();
+
+        if($delete)
+        return redirect()->back()->with('message', 'Sizes Deleted Successfully');
+    }
+
+    public function changeStatus(Size $size)
+    {
+        try {
+            $size->status = $size->status == 1 ? 0 : 1;
+            $size->save();
+
+            return redirect()->back()->with('message', 'Status Change Successfully');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error changing size status: ' . $e->getMessage());
+
+            // Return an error message or handle it as needed
+            return redirect()->back()->with('error', 'Error changing size status');
+        }
     }
 }

@@ -63,7 +63,6 @@ class UnitController extends Controller
     {
         $update=$unit->update([
             'name'=> $request->name,
-            'description'=> $request->description,
         ]);
 
         if($update)
