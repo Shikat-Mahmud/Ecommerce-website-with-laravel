@@ -33,8 +33,9 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
-						<img src="{{ asset('/') }}frontend/images/icons/logo-01.png" alt="IMG-LOGO">
+					<a href="#" class="logo" style="color: #333333;">
+						<!-- <img src="{{ asset('/') }}frontend/images/icons/logo-01.png" alt="IMG-LOGO"> -->
+						<h2>StyleSync</h2>
 					</a>
 
 					<!-- Menu desktop -->

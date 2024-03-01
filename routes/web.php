@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\SizeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Admin\AdminController;
@@ -53,3 +54,7 @@ Route::get('/brand-status/{brand}', [BrandController::class, 'changeStatus'])->n
 //unit routes
 Route::resource('units', UnitController::class);
 Route::get('/unit-status/{unit}', [UnitController::class, 'changeStatus'])->name('change-status');
+
+//size routes
+Route::resource('sizes', SizeController::class);
+Route::get('/size-status/{size}', [SizeController::class, 'changeStatus'])->name('change-status');

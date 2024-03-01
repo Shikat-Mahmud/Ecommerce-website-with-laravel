@@ -35,6 +35,13 @@
 								<li><a class="submenu" href="{{ url('/units') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Unit List</span></a></li>
 							</ul>	
 						</li>
+						<li>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Size </span></a>
+							<ul>
+								<li><a class="submenu" href="{{ url('/sizes/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Size</span></a></li>
+								<li><a class="submenu" href="{{ url('/sizes') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Size List</span></a></li>
+							</ul>	
+						</li>
 						<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
 						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
 						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
