@@ -7,6 +7,7 @@
 						<li><a href="tasks.html"><i class="icon-tasks"></i><span class="hidden-tablet"> Tasks</span></a></li>
 						<li><a href="ui.html"><i class="icon-eye-open"></i><span class="hidden-tablet"> UI Features</span></a></li>
 						<li><a href="widgets.html"><i class="icon-dashboard"></i><span class="hidden-tablet"> Widgets</span></a></li> -->
+
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Category</span></a>
 							<ul>
@@ -14,6 +15,7 @@
 								<li><a class="submenu" href="{{ url('/categories') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Category List</span></a></li>
 							</ul>	
 						</li>
+
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Sub Category </span></a>
 							<ul>
@@ -21,6 +23,7 @@
 								<li><a class="submenu" href="{{ url('/sub-categories') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Category List</span></a></li>
 							</ul>	
 						</li>
+
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Brand </span></a>
 							<ul>
@@ -28,6 +31,7 @@
 								<li><a class="submenu" href="{{ url('/brands') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Brand List</span></a></li>
 							</ul>	
 						</li>
+
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Unit </span></a>
 							<ul>
@@ -35,6 +39,7 @@
 								<li><a class="submenu" href="{{ url('/units') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Unit List</span></a></li>
 							</ul>	
 						</li>
+
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Size </span></a>
 							<ul>
@@ -42,6 +47,7 @@
 								<li><a class="submenu" href="{{ url('/sizes') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Size List</span></a></li>
 							</ul>	
 						</li>
+
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Color </span></a>
 							<ul>
@@ -49,6 +55,15 @@
 								<li><a class="submenu" href="{{ url('/colors') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Color List</span></a></li>
 							</ul>	
 						</li>
+
+						<li>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Product </span></a>
+							<ul>
+								<li><a class="submenu" href="{{ url('/product/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Product</span></a></li>
+								<li><a class="submenu" href="{{ url('/product') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Product List</span></a></li>
+							</ul>	
+						</li>
+
 						<li><a href="form.html"><i class="icon-edit"></i><span class="hidden-tablet"> Forms</span></a></li>
 						<li><a href="chart.html"><i class="icon-list-alt"></i><span class="hidden-tablet"> Charts</span></a></li>
 						<li><a href="typography.html"><i class="icon-font"></i><span class="hidden-tablet"> Typography</span></a></li>
