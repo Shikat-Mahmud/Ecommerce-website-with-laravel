@@ -43,7 +43,6 @@ Route::get('/',[HomeController::class,'index']);
 Route::resource('categories', CategoryController::class);
 Route::get('/cat-status/{category}', [CategoryController::class, 'changeStatus'])->name('change-status');
 
-
 //sub category routes
 Route::resource('sub-categories', SubCategoryController::class);
 Route::get('/subcat-status/{subcategory}', [SubCategoryController::class, 'changeStatus'])->name('change-status');
@@ -63,3 +62,7 @@ Route::get('/size-status/{size}', [SizeController::class, 'changeStatus'])->name
 //color routes
 Route::resource('colors', ColorController::class);
 Route::get('/color-status/{color}', [ColorController::class, 'changeStatus'])->name('change-status');
+
+//product routes
+Route::resource('product', ColorController::class);
+Route::get('/product-status/{product}', [ColorController::class, 'changeStatus'])->name('change-status');
