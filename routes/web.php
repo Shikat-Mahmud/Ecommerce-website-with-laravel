@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\backend\ColorController;
+use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\SizeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
@@ -64,5 +65,5 @@ Route::resource('colors', ColorController::class);
 Route::get('/color-status/{color}', [ColorController::class, 'changeStatus'])->name('change-status');
 
 //product routes
-Route::resource('product', ColorController::class);
-Route::get('/product-status/{product}', [ColorController::class, 'changeStatus'])->name('change-status');
+Route::resource('products', ProductController::class);
+Route::get('/product-status/{product}', [ProductController::class, 'changeStatus'])->name('change-status');

@@ -61,16 +61,6 @@
 
                     </div>
 
-                    <!-- <div class="control-group">
-                            <label class="control-label" for="categorySelect">Category Status</label>
-                            <div class="controls">
-                                <select id="categorySelect" class="input-xlarge" name="categoryType" required>
-                                    <option value="0">Available</option>
-                                    <option value="1">Not Available</option>
-                                </select>
-                            </div>
-                        </div> -->
-
                     <div class="control-group">
                         <label class="control-label">Image Upload</label>
                         <div class="controls">

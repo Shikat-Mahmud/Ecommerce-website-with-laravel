@@ -59,8 +59,8 @@
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Product </span></a>
 							<ul>
-								<li><a class="submenu" href="{{ url('/product/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Product</span></a></li>
-								<li><a class="submenu" href="{{ url('/product') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Product List</span></a></li>
+								<li><a class="submenu" href="{{ url('/products/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Product</span></a></li>
+								<li><a class="submenu" href="{{ url('/products') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Product List</span></a></li>
 							</ul>	
 						</li>
 

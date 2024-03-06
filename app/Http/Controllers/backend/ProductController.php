@@ -1,8 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\backend;
 
+use App\Http\Controllers\Controller;
+use App\Models\Brand;
+use App\Models\Category;
+use App\Models\Color;
 use App\Models\Product;
+use App\Models\Size;
+use App\Models\SubCategory;
+use App\Models\Unit;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -20,7 +27,13 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $subcategories = SubCategory::all();
+        $brands = Brand::all();
+        $units = Unit::all();
+        $sizes = Size::all();
+        $colors = Color::all();
+        return view('backend.product.create', compact('categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
     }
 
     /**
