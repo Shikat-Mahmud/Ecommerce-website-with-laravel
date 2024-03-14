@@ -114,7 +114,7 @@
                             <select class="input-xlarge" name="size" style="magrgin-left:20px;">
                                 <option value="">Select Size</option>
                                 @foreach($sizes as $size)
-                                <option value="{{ $size->id }}">{{ $size->name }}</option>
+                                <option value="{{ $size->id }}">{{ $size->size }}</option>
                                 @endforeach
                         </select>
                         </div>
@@ -126,7 +126,7 @@
                             <select class="input-xlarge" name="color" style="magrgin-left:20px;">
                                 <option value="">Select Color</option>
                                 @foreach($colors as $color)
-                                <option value="{{ $color->id }}">{{ $color->name }}</option>
+                                <option value="{{ $color->id }}">{{ $color->color }}</option>
                                 @endforeach
                         </select>
                         </div>
