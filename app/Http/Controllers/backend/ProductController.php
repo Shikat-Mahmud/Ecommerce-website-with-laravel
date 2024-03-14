@@ -41,7 +41,44 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $product = new Product;
+        $product->cat_id = $request->category;
+        $product->subcat_id = $request->subcategory;
+        $product->brand_id = $request->brand;
+        $product->unit_id = $request->unit;
+        $product->size_id = $request->size;
+        $product->color_id = $request->color;
+        $product->code = $request->code;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+
+        $images = array();
+        if($files = $request->file('file')){
+            $i=0;
+            foreach($files as $file){
+                $name=$file->getClientOriginalName();
+                $fileNameExtract=explode('.', $name);
+                $fileName=$fileNameExtract[0];
+                $fileName.=time();
+                $fileName.=$i;
+                $fileName.='.';
+                $fileName.=$fileNameExtract[1];
+                $file->move('image', $fileName);
+                $image[]=$fileName;
+                $i++;
+            }
+
+            $product['image']=implode("|",$images);
+
+            $product->save();
+            return redirect()->back()->with('message', 'Product created successfully');
+        } else {
+            echo "error";
+        }
+
+        $product->save();
+        return redirect()->back()->with('message', 'Product created successfully');
     }
 
     /**
