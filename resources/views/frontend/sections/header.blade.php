@@ -23,7 +23,7 @@
 						</a>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
+							BDT
 						</a>
 					</div>
 				</div>
@@ -33,7 +33,7 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo" style="color: #333333;">
+					<a href="{{url('/')}}" class="logo" style="color: #333333;">
 						<!-- <img src="{{ asset('/') }}frontend/images/icons/logo-01.png" alt="IMG-LOGO"> -->
 						<h2>StyleSync</h2>
 					</a>
@@ -42,12 +42,14 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="index.html">Home</a>
+								<a href="{{url('/')}}">Home</a>
 							</li>
 
+							@foreach($categories as $category)
 							<li>
-								<a href="product.html">Shop</a>
+								<a href="#">{{ $category->name }}</a>
 							</li>
+							@endforeach
 
 							<li>
 								<a href="about.html">About</a>
@@ -81,7 +83,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="{{ asset('/') }}frontend/images/icons/logo-01.png"  alt="IMG-LOGO"></a>
+				<a href="{{url('/')}}"><img src="{{ asset('/') }}frontend/images/icons/logo-01.png"  alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -132,7 +134,7 @@
 						</a>
 
 						<a href="#" class="flex-c-m p-lr-10 trans-04">
-							USD
+							BDT
 						</a>
 					</div>
 				</li>
@@ -140,12 +142,14 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="{{url('/')}}">Home</a>
 				</li>
 
+				@foreach($categories as $category)
 				<li>
-					<a href="product.html">Shop</a>
+					<a href="#">{{ $category->name }}</a>
 				</li>
+				@endforeach
 
 				<li>
 					<a href="about.html">About</a>
