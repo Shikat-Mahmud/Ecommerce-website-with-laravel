@@ -55,7 +55,6 @@
                             <ul class="span2" style=" background-color: #c4f2ff; text-align: center; padding: 4px;">
                                 {{$item}}
                             </ul>
-
                             @endforeach
                         </td>
                         <td class="center">

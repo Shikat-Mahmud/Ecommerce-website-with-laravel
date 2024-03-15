@@ -46,7 +46,7 @@
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
 
-
+	@stack('styles')
 </head>
 
 <body>
@@ -190,6 +190,9 @@
 	<script src="{{ asset('backend/js/custom.js') }}"></script>
 	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js"></script>
+
+	@stack('scripts')
+
 	<!-- end: JavaScript-->
 
 </body>

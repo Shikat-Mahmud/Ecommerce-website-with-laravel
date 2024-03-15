@@ -19,7 +19,15 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::all();
+        $categories = Category::all();
+        $subcategories = SubCategory::all();
+        $brands = Brand::all();
+        $units = Unit::all();
+        $sizes = Size::all();
+        $colors = Color::all();
+
+        return view('backend.product.index', compact('products', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
     }
 
     /**
@@ -54,18 +62,18 @@ class ProductController extends Controller
         $product->price = $request->price;
 
         $images = array();
-        if($files = $request->file('file')){
-            $i=0;
-            foreach($files as $file){
-                $name=$file->getClientOriginalName();
-                $fileNameExtract=explode('.', $name);
-                $fileName=$fileNameExtract[0];
-                $fileName.=time();
-                $fileName.=$i;
-                $fileName.='.';
-                $fileName.=$fileNameExtract[1];
+        if ($files = $request->file('file')) {
+            $i = 0;
+            foreach ($files as $file) {
+                $name = $file->getClientOriginalName();
+                $fileNameExtract = explode('.', $name);
+                $fileName = $fileNameExtract[0];
+                $fileName .= time();
+                $fileName .= $i;
+                $fileName .= '.';
+                $fileName .= $fileNameExtract[1];
                 $file->move('image', $fileName);
-                $images[]=$fileName;
+                $images[] = $fileName;
                 $i++;
             }
 
@@ -86,7 +94,10 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        // Convert the image string into an array
+        $product->image = explode('|', $product->image);
+
+        return view('backend.product.show', compact('product'));
     }
 
     /**
@@ -111,5 +122,21 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function changeStatus(Product $product)
+    {
+        try {
+            $product->status = $product->status == 1 ? 0 : 1;
+            $product->save();
+
+            return redirect()->back()->with('message', 'Status Change Successfully');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Error changing product status: ' . $e->getMessage());
+
+            // Return an error message or handle it as needed
+            return redirect()->back()->with('error', 'Error changing product status');
+        }
     }
 }
