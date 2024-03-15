@@ -17,12 +17,12 @@ class HomeController extends Controller
 {
     public function index(){
         $products = Product::where('status', 1)->latest()->limit(12)->get();
-        $categories = Category::all();
-        $subcategories = SubCategory::all();
-        $brands = Brand::all();
-        $units = Unit::all();
-        $sizes = Size::all();
-        $colors = Color::all();
+        $categories = Category::where('status', 1)->get();
+        $subcategories = SubCategory::where('status', 1)->get();
+        $brands = Brand::where('status', 1)->get();;
+        $units = Unit::where('status', 1)->get();;
+        $sizes = Size::where('status', 1)->get();;
+        $colors = Color::where('status', 1)->get();;
 
         return view('frontend.home', compact('products', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
     }
