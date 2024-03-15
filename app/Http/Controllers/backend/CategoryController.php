@@ -34,6 +34,7 @@ class CategoryController extends Controller
     {
         $category = new Category;
         $category->name = $request->name;
+        $category->url = $request->url;
         $category->description = $request->description;
         $category->image = $request->image->store('category');
 
@@ -74,6 +75,7 @@ class CategoryController extends Controller
     {
         $update=$category->update([
             'name'=> $request->name,
+            'url'=> $request->url,
             'description'=> $request->description,
             'image'=> $request->file('image')->store('category'),
         ]);
