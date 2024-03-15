@@ -105,7 +105,13 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        $subcategories = SubCategory::all();
+        $brands = Brand::all();
+        $units = Unit::all();
+        $sizes = Size::all();
+        $colors = Color::all();
+        return view('backend.product.edit', compact('product', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
     }
 
     /**
@@ -113,18 +119,50 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $request->validate([
+            'file.*' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
+        ]);
+
+        $product->cat_id = $request->category;
+        $product->subcat_id = $request->subcategory;
+        $product->brand_id = $request->brand;
+        $product->unit_id = $request->unit;
+        $product->size_id = $request->size;
+        $product->color_id = $request->color;
+        $product->code = $request->code;
+        $product->name = $request->name;
+        $product->description = $request->description;
+        $product->price = $request->price;
+
+        if ($request->hasFile('file')) {
+            $images = [];
+            foreach ($request->file('file') as $file) {
+                $name = $file->getClientOriginalName();
+                $fileNameExtract = explode('.', $name);
+                $fileName = $fileNameExtract[0] . time() . $fileNameExtract[1];
+                $file->move('image', $fileName);
+                $images[] = $fileName;
+                $product->image = implode('|', $images);
+            }
+
+            $product->save();
+
+            return redirect('/products')->with('message', 'Product Updated Successfully');
+        }
     }
+
+
+
 
     /**
      * Remove the specified resource from storage.
      */
     public function destroy(Product $product)
     {
-        $delete=$product->delete();
+        $delete = $product->delete();
 
-        if($delete)
-        return redirect()->back()->with('message', 'Product Deleted Successfully');
+        if ($delete)
+            return redirect()->back()->with('message', 'Product Deleted Successfully');
     }
 
     public function changeStatus(Product $product)
