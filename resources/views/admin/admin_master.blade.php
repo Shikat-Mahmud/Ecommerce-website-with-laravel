@@ -8,6 +8,7 @@
 	<title>@yield('title')</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta name="keyword"
 		content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 	<!-- end: Meta -->
@@ -30,17 +31,6 @@
 		href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext'
 		rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
-
-
-	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
-	<!--[if lt IE 9]>
-	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<link id="ie-style" href="{{ asset('css/ie.css') }}" rel="stylesheet">
-	<![endif]-->
-
-	<!--[if IE 9]>
-		<link id="ie9style" href="{{ asset('css/ie9.') }}" rel="stylesheet">
-	<![endif]-->
 
 	<!-- start: Favicon -->
 	<link rel="shortcut icon" href="img/favicon.ico">

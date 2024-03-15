@@ -36,12 +36,21 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        $subcategories = SubCategory::all();
+        $subcategories = SubCategory::all(); // Initially fetch all subcategories
         $brands = Brand::all();
         $units = Unit::all();
         $sizes = Size::all();
         $colors = Color::all();
+
         return view('backend.product.create', compact('categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
+    }
+
+    public function fetchSubcategories(Request $request)
+    {
+        $categoryId = $request->get('category_id');
+        $subcategories = SubCategory::where('cat_id', $categoryId)->pluck('name', 'id');
+
+        return response()->json($subcategories);
     }
 
     /**

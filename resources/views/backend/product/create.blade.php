@@ -61,26 +61,23 @@
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label" for="date01">Select Category</label>
+                        <label class="control-label" for="category">Select Category</label>
                         <div class="controls">
-                            <select class="input-xlarge" name="category" style="magrgin-left:20px;">
+                            <select class="input-xlarge" id="category" name="category">
                                 <option value="">Select Category</option>
                                 @foreach($categories as $category)
-                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
                                 @endforeach
-                        </select>
+                            </select>
                         </div>
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label" for="date01">Select Sub Category</label>
+                        <label class="control-label" for="subcategory">Select Sub Category</label>
                         <div class="controls">
-                            <select class="input-xlarge" name="subcategory" style="magrgin-left:20px;">
+                            <select class="input-xlarge" id="subcategory" name="subcategory">
                                 <option value="">Select Sub Category</option>
-                                @foreach($subcategories as $subcategory)
-                                <option value="{{ $subcategory->id }}">{{ $subcategory->name }}</option>
-                                @endforeach
-                        </select>
+                            </select>
                         </div>
                     </div>
 
@@ -167,3 +164,31 @@
 </div><!--/row-->
 
 @endsection
+
+@push('scripts')
+<script>
+    $(document).ready(function() {
+        $('#category').change(function() {
+            var categoryId = $(this).val();
+
+            // Send AJAX request to fetch subcategories
+            $.ajax({
+                url: '{{ route("fetch.subcategories") }}', 
+                method: 'GET',
+                data: {
+                    category_id: categoryId
+                },
+                success: function(response) {
+                    // Clear existing options
+                    $('#subcategory').empty();
+                    
+                    // Add new options based on the response
+                    $.each(response, function(key, value) {
+                        $('#subcategory').append('<option value="' + key + '">' + value + '</option>');
+                    });
+                }
+            });
+        });
+    });
+</script>
+@endpush

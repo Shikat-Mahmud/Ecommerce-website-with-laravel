@@ -67,3 +67,4 @@ Route::get('/color-status/{color}', [ColorController::class, 'changeStatus'])->n
 //product routes
 Route::resource('products', ProductController::class);
 Route::get('/product-status/{product}', [ProductController::class, 'changeStatus'])->name('change-status');
+Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategories'])->name('fetch.subcategories');
