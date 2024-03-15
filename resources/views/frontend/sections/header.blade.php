@@ -47,7 +47,7 @@
 
 							@foreach($categories as $category)
 							<li>
-								<a href="#">{{ $category->name }}</a>
+								<a href="{{ url($category->url) }}">{{ $category->name }}</a>
 							</li>
 							@endforeach
 
@@ -147,7 +147,7 @@
 
 				@foreach($categories as $category)
 				<li>
-					<a href="#">{{ $category->name }}</a>
+					<a href="{{ url($category->url) }}">{{ $category->name }}</a>
 				</li>
 				@endforeach
 
