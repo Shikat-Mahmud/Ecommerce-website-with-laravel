@@ -65,11 +65,11 @@ class ProductController extends Controller
                 $fileName.='.';
                 $fileName.=$fileNameExtract[1];
                 $file->move('image', $fileName);
-                $image[]=$fileName;
+                $images[]=$fileName;
                 $i++;
             }
 
-            $product['image']=implode("|",$images);
+            $product->image = implode("|", $images);
 
             $product->save();
             return redirect()->back()->with('message', 'Product created successfully');
