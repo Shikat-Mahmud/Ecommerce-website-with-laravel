@@ -121,7 +121,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $delete=$product->delete();
+
+        if($delete)
+        return redirect()->back()->with('message', 'Product Deleted Successfully');
     }
 
     public function changeStatus(Product $product)
