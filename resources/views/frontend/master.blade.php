@@ -47,6 +47,7 @@
 <!-- Main Wrapper -->
 <div class="main-wrapper">
             @include('frontend.sections.header')
+            @include('frontend.sections.side-cart')
             @yield('content')
             @include('frontend.sections.footer')
         </div>	
