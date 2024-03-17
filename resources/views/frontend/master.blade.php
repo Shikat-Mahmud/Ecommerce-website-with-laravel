@@ -60,7 +60,7 @@
 	</div>
 
     <!-- Modal1 -->
-    @include('frontend.modal')
+    @include('frontend.sections.modal')
 
 <!--===============================================================================================-->	
 <script src="{{ asset('/') }}frontend/vendor/jquery/jquery-3.2.1.min.js"></script>

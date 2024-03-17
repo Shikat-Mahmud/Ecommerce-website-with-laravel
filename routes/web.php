@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\ColorController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\SizeController;
+use App\Http\Controllers\frontend\ProductDetailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Admin\AdminController;
@@ -12,16 +13,6 @@ use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\UnitController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 
 //============== admin route ==============//
@@ -30,11 +21,6 @@ Route::post('/admin-dashboard',[AdminController::class,'showDashboard']);
 
 Route::get('/dashboard',[SuperAdminController::class,'dashboard']);
 Route::get('/logout',[SuperAdminController::class,'logout']);
-
-
-
-//============== fronten route ==============//
-Route::get('/',[HomeController::class,'index']);
 
 
 
@@ -68,3 +54,13 @@ Route::get('/color-status/{color}', [ColorController::class, 'changeStatus'])->n
 Route::resource('products', ProductController::class);
 Route::get('/product-status/{product}', [ProductController::class, 'changeStatus'])->name('change-status');
 Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategories'])->name('fetch.subcategories');
+
+
+
+
+
+//============== fronten route ==============//
+Route::get('/',[HomeController::class,'index']);
+
+Route::get('/product-detail/{id}',[ProductDetailController::class,'productDetail'])->name('product.detail');
+

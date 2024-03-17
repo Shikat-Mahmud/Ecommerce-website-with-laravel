@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Category;
 use App\Models\Color;
@@ -11,19 +10,19 @@ use App\Models\Product;
 use App\Models\Size;
 use App\Models\SubCategory;
 use App\Models\Unit;
+use Illuminate\Http\Request;
 
-
-class HomeController extends Controller
+class ProductDetailController extends Controller
 {
-    public function index(){
-        $products = Product::where('status', 1)->latest()->limit(12)->get();
+    public function productDetail($id){
+        $product = Product::findOrFail($id);
         $categories = Category::where('status', 1)->get();
         $subcategories = SubCategory::where('status', 1)->get();
         $brands = Brand::where('status', 1)->get();
         $units = Unit::where('status', 1)->get();
-        $sizes = Size::where('status', 1)->get();
-        $colors = Color::where('status', 1)->get();
+        $sizes = Size::find($product->size_id);
+        $colors = Color::find($product->color_id);
 
-        return view('frontend.main.home', compact('products', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
+        return view('frontend.main.product-detail', compact('product', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
     }
 }
