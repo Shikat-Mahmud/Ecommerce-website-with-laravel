@@ -2,6 +2,18 @@
 @section('title','Ecommerce Website')
 @push('styles')
 <style>
+	.category-image {
+		width: 300px; 
+		height: 200px; 
+		object-fit: cover; 
+	}
+
+	.product-image {
+		width: 200px; 
+		height: 300px; 
+		object-fit: cover; 
+	}
+
     /* Media query for desktop */
     @media only screen and (min-width: 992px) {
         .product-main {
@@ -295,39 +307,55 @@
 			<!-- Slide2 -->
 			<div class="wrap-slick2">
 				<div class="slick2">
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
-						<!-- Block2 -->
-						<div class="block2">
-							<div class="block2-pic hov-img0">
-								<img src=" {{ asset('frontend/images/product-01.jpg') }} " alt="IMG-PRODUCT">
 
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-									Quick View
-								</a>
-							</div>
+					@if(isset($related_product) && !$related_product->isEmpty())
+						@foreach($related_product as $related)
+							@php
+								$images = explode("|", $related->image);
+								$img = $images[0];
+							@endphp
 
-							<div class="block2-txt flex-w flex-t p-t-14">
-								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-										Esprit Ruffle Shirt
-									</a>
+							<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+								<!-- Block2 -->
+								<div class="block2">
+									<div class="block2-pic hov-img0">
+										@if ($img)
+											<img src="{{ asset('/image/' . $img) }}" alt="IMG-PRODUCT" class="product-image">
+										@else
+											<p>No image available</p>
+										@endif
 
-									<span class="stext-105 cl3">
-										$16.64
-									</span>
+										<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+											Quick View
+										</a>
+									</div>
+
+									<div class="block2-txt flex-w flex-t p-t-14">
+										<div class="block2-txt-child1 flex-col-l ">
+											<a href="{{ url('/product-detail/'. $related->id )}}" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+												{{ $related->name }}
+											</a>
+
+											<span class="stext-105 cl3">
+												&#2547;{{ $related->price }}
+											</span>
+										</div>
+
+										<div class="block2-txt-child2 flex-r p-t-3">
+											<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+												<img class="icon-heart1 dis-block trans-04" src="{{ asset('frontend/images/icons/icon-heart-01.png') }}" alt="ICON">
+												<img class="icon-heart2 dis-block trans-04 ab-t-l" src="{{ asset('frontend/images/icons/icon-heart-02.png') }}" alt="ICON">
+											</a>
+										</div>
+									</div>
 								</div>
-
-								<div class="block2-txt-child2 flex-r p-t-3">
-									<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-										<img class="icon-heart1 dis-block trans-04" src=" {{ asset('frontend/images/icons/icon-heart-01.png') }} " alt="ICON">
-										<img class="icon-heart2 dis-block trans-04 ab-t-l" src=" {{ asset('frontend/images/icons/icon-heart-02.png') }} " alt="ICON">
-									</a>
-								</div>
 							</div>
-						</div>
-					</div>
-
+						@endforeach
+					@else
+						<p class="txt-center">There are no related products available.</p>
+					@endif
 				</div>
+
 			</div>
 		</div>
 	</section>

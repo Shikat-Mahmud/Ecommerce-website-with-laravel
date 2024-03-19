@@ -23,6 +23,9 @@ class ProductDetailController extends Controller
         $sizes = Size::find($product->size_id);
         $colors = Color::find($product->color_id);
 
-        return view('frontend.main.product-detail', compact('product', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
+        $cat_id = $product->cat_id;
+        $related_product = Product::where('cat_id', $cat_id)->where('id', '!=', $product->id)->limit(4)->get();
+
+        return view('frontend.main.product-detail', compact('product', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors', 'related_product'));
     }
 }

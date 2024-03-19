@@ -406,7 +406,7 @@
 								</a>
 
 								<span class="stext-105 cl3">
-								&#2547;{{ $product->price }}
+									&#2547;{{ $product->price }}
 								</span>
 							</div>
 
