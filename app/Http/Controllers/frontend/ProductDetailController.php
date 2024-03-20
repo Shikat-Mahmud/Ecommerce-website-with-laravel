@@ -28,4 +28,14 @@ class ProductDetailController extends Controller
 
         return view('frontend.main.product-detail', compact('product', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors', 'related_product'));
     }
+
+    public function productByCat($id){
+
+        $categories = Category::where('status', 1)->get();
+        $subcategories = SubCategory::where('status', 1)->get();
+        $brands = Brand::where('status', 1)->get();
+        $products = Product::where('status', 1)->where('cat_id',$id)->limit(12)->get();
+
+        return view('frontend.main.product_by_category', compact('products', 'categories', 'subcategories', 'brands'));
+    }
 }

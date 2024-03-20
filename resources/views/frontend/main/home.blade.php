@@ -6,13 +6,13 @@
     width: 300px; 
     height: 200px; 
     object-fit: cover; 
-}
-
-.product-image {
-    width: 200px; 
-    height: 300px; 
-    object-fit: cover; 
-}
+	}
+	
+	.product-image {
+	    width: 200px; 
+	    height: 300px; 
+	    object-fit: cover; 
+	}
 </style>
 @endpush
 @section('content')
@@ -421,7 +421,6 @@
 				</div>
 				@endforeach
 
-				
 			</div>
 
 			<!-- Load more -->
