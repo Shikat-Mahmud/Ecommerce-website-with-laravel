@@ -42,8 +42,8 @@
 
                             @foreach($categories as $category)
 								<div class="input-checkbox">
-									<input type="checkbox" id="category-1">
-									<label for="category-1">
+									<input type="checkbox" id="category-{{ $category->id }}">
+									<label for="category-{{ $category->id }}">
 										<span></span>
 										{{ $category->name }}
 									</label>
@@ -127,7 +127,9 @@
 						<!-- store products -->
 						<div class="row">
 							<!-- product -->
+                            @if(isset($products) && !$products->isEmpty())
 							@foreach($products as $product)
+
                                 @php
                                 $images = explode("|", $product->image);
                                 $img = $images[0];
@@ -168,7 +170,10 @@
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
+                                @endforeach
+                                @else
+                                <p class="text-center" style="margin: 0 auto;">No product found of this category.</p>
+                                @endif
 							<!-- /product -->
 						</div>
 						<!-- /store products -->
