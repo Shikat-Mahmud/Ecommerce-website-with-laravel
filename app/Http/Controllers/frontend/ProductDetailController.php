@@ -38,4 +38,17 @@ class ProductDetailController extends Controller
 
         return view('frontend.main.product_by_category', compact('products', 'categories', 'subcategories', 'brands'));
     }
+
+    public function modalProductShow($id){
+        $product = Product::findOrFail($id);
+        $categories = Category::where('status', 1)->get();
+        $subcategories = SubCategory::where('status', 1)->get();
+        $brands = Brand::where('status', 1)->get();
+        $units = Unit::where('status', 1)->get();
+        $sizes = Size::find($product->size_id);
+        $colors = Color::find($product->color_id);
+        
+        return view('frontend.sections.modal', compact('product', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
+    }
+    
 }

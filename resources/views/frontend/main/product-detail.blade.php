@@ -33,7 +33,7 @@
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
 
-			<a href="product.html" class="stext-109 cl8 hov-cl1 trans-04">
+			<a href="{{ url('/product_by_category/' . $product->category->id) }}" class="stext-109 cl8 hov-cl1 trans-04">
 			{{ $product->category->name }}
 				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 			</a>
@@ -71,7 +71,6 @@
 									</div>
 								</div>
 								@endforeach
-
 							</div>
 						</div>
 					</div>
@@ -142,8 +141,6 @@
 											<i class="fs-16 zmdi zmdi-plus"></i>
 										</div>
 									</div>
-
-									
 								</div>
 							</div>	
 						</div>
@@ -157,25 +154,6 @@
 							<button href="#" class="flex-c-m cl3 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail hov-cl1 p-lr-15 size-101 bor1 m-b-10 m-r-10" style="background: #F7F7F7;">
 								<i class="zmdi zmdi-favorite p-r-3"></i>Add to Wishlist
 							</button>
-
-
-							<!-- <div class="flex-m bor9 p-r-10 m-r-11">
-								<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-									<i class="zmdi zmdi-favorite"></i>
-								</a>
-							</div> -->
-
-							<!-- <a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-								<i class="fa fa-facebook"></i>
-							</a>
-
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-								<i class="fa fa-twitter"></i>
-							</a>
-
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-								<i class="fa fa-google-plus"></i>
-							</a> -->
 						</div>
 					</div>
 				</div>
