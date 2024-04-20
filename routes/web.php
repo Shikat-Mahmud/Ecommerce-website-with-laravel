@@ -3,6 +3,7 @@
 use App\Http\Controllers\backend\ColorController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\SizeController;
+use App\Http\Controllers\backend\SubscriberContrller;
 use App\Http\Controllers\frontend\ProductDetailController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
@@ -59,10 +60,11 @@ Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategorie
 
 
 
-//============== fronten route ==============//
+//============== frontend route ==============//
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('/product-detail/{id}',[ProductDetailController::class,'productDetail'])->name('product.detail');
 Route::get('/product-modal/{id}',[ProductDetailController::class,'productDetail'])->name('product.modal');
 Route::get('/product_by_category/{id}',[ProductDetailController::class,'productByCat'])->name('product.by.category');
 
+Route::post('/subscribe',[SubscriberContrller::class, 'store'])->name('subscribe');

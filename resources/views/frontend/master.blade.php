@@ -39,6 +39,10 @@
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
+
+    {{-- toaster --}}
+    <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
+
 @stack('styles')
 </head>
 
@@ -169,6 +173,31 @@
 
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<!-- Toastr JS -->
+<script src="{{ asset('frontend/js/toastr.min.js') }}"></script>
+<script>
+    toastr.options = {
+        "closeButton": true,
+        "progressBar": true,
+        "timeOut": 5000,
+        "extendedTimeOut": 1000,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": true,
+        "maxOpened": 3
+    };
+
+    @if (Session:: has('success'))
+    toastr.success("{{ Session::get('success') }}");
+    @elseif(Session:: has('error'))
+    toastr.error("{{ Session::get('error') }}");
+    @elseif(Session:: has('warning'))
+    toastr.warning("{{ Session::get('warning') }}");
+    @elseif(Session:: has('info'))
+    toastr.info("{{ Session::get('info') }}");
+    @endif
+</script>
 
 @stack('scripts')
 
