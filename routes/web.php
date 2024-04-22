@@ -56,6 +56,8 @@ Route::resource('products', ProductController::class);
 Route::get('/product-status/{product}', [ProductController::class, 'changeStatus'])->name('change-status');
 Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategories'])->name('fetch.subcategories');
 
+//product routes
+Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscribers');
 
 
 

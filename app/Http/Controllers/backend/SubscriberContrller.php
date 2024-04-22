@@ -9,6 +9,13 @@ use Illuminate\Http\Request;
 
 class SubscriberContrller extends Controller
 {
+    public function index()
+    {
+        $subscribers = Subscriber::all();
+
+        return view('backend.subscriber.index', compact('subscribers'));
+    }
+
     public function store(Request $request)
     {
         try {
