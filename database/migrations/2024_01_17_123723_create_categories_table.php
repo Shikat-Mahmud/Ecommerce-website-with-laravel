@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description');
             $table->string('image');
-            $table->string('url');
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

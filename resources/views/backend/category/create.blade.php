@@ -53,13 +53,6 @@
                         </div>
                     </div>
 
-                    <div class="control-group">
-                        <label class="control-label" for="date01">Category Url</label>
-                        <div class="controls">
-                            <input type="text" class="input-xlarge" name="url" required>
-                        </div>
-                    </div>
-
                     <div class="control-group hidden-phone">
                         <label class="control-label" for="textarea2">Category Description</label>
                         <div class="controls">

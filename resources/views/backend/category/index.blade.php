@@ -42,9 +42,8 @@
 					<tr>
 						<th style="width: 5%;">Id</th>
 						<th style="width: 10%;">Category Name</th>
-						<th style="width: 25%;">Description</th>
+						<th style="width: 35%;">Description</th>
 						<th style="width: 15%;">Image</th>
-						<th style="width: 10%;">Url</th>
 						<th style="width: 10%;">Status</th>
 						<th style="width: 25%;">Actions</th>
 					</tr>
@@ -59,7 +58,6 @@
 							<img src="{{ asset('/storage/' . $category->image) }}" alt="image"
 								style="width: auto; height: 100px; margin: 2px;">
 						</td>
-						<td class="center">{{ $category->url }}</td>
 						<td class="center">
 							@if($category->status==1)
 							<span class="label label-success">Active</span>
