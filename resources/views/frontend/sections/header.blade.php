@@ -41,22 +41,22 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li class="active-menu">
+							<li class="{{ Request::is('/') ? 'active-menu' : '' }}">
 								<a href="{{url('/')}}">Home</a>
 							</li>
 
 							@foreach($categories as $category)
-							<li>
+							<li class="{{ Request::is('product_by_category/' . $category->id) ? 'active-menu' : '' }}">
 								<a href="{{ url('/product_by_category/' . $category->id) }}">{{ $category->name }}</a>
 							</li>
 							@endforeach
 
-							<li>
-								<a href="about.html">About</a>
+							<li class="{{ Request::is('/about') ? 'active-menu' : '' }}">
+								<a href="#">About</a>
 							</li>
 
-							<li>
-								<a href="contact.html">Contact</a>
+							<li class="{{ Request::is('/contact') ? 'active-menu' : '' }}">
+								<a href="#">Contact</a>
 							</li>
 						</ul>
 					</div>	
@@ -152,11 +152,11 @@
 				@endforeach
 
 				<li>
-					<a href="about.html">About</a>
+					<a href="#">About</a>
 				</li>
 
 				<li>
-					<a href="contact.html">Contact</a>
+					<a href="#">Contact</a>
 				</li>
 			</ul>
 		</div>
