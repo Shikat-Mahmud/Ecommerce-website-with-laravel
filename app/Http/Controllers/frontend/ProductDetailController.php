@@ -50,5 +50,16 @@ class ProductDetailController extends Controller
         
         return view('frontend.sections.modal', compact('product', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
     }
+
+    public function modalProduct($id){
+        $product = Product::find($id);
+
+        if (! $product)
+        {
+            return response('Unable to find the product', 404);
+        }
+
+        return response($product, 201);
+    }
     
 }

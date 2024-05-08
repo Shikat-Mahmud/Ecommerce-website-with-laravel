@@ -68,6 +68,7 @@ Route::get('/',[HomeController::class,'index']);
 
 Route::get('/product-detail/{id}',[ProductDetailController::class,'productDetail'])->name('product.detail');
 Route::get('/product-modal/{id}',[ProductDetailController::class,'modalProductShow'])->name('product.modal');
+// Route::get('/product-modal/{id}',[ProductDetailController::class,'modalProduct'])->name('product.modal');
 Route::get('/product_by_category/{id}',[ProductDetailController::class,'productByCat'])->name('product.by.category');
 
 Route::get('/all-product',[AllProductController::class, 'index'])->name('all.product');

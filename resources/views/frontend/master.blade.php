@@ -37,7 +37,9 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('/') }}frontend/css/font-awesome.min.css">
 <!--===============================================================================================-->
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
 
 
     {{-- toaster --}}
@@ -197,6 +199,38 @@
     @elseif(Session:: has('info'))
     toastr.info("{{ Session::get('info') }}");
     @endif
+</script>
+
+<script>
+$(document).ready(function(){
+    $('.quick_view_modal').on('click', function(e){
+        e.preventDefault();
+        var product_id = $(this).data('id');
+        $.ajax({
+            type: "GET",
+            url: "{{ route('product.modal', '') }}" + '/' + product_id,
+            success: function(data){
+                // Insert the data into a separate container within the modal
+                $('.js-modal1').html(data);
+                
+                // Show the modal
+                $('.js-modal1').addClass('show-modal1');
+            },
+            error: function(error){
+                console.log(error);
+            }
+        });
+    });
+
+    // Event listener for close button
+    $(document).on('click', '.js-hide-modal1', function(e){
+        e.preventDefault();
+		
+        // Hide the modal
+        $('.js-modal1').removeClass('show-modal1');
+    });
+});
+
 </script>
 
 @stack('scripts')
