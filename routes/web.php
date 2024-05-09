@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\frontend\UserProfileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\ColorController;
@@ -17,12 +18,13 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\UnitController;
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::get('/profile', [UserProfileController::class, 'index'])->name('profile');
+    Route::get('/profile-edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
@@ -46,7 +48,7 @@ Route::get('/admin-login', [AdminController::class, 'index']);
 Route::post('/admin-dashboard',[AdminController::class,'showDashboard']);
 
 Route::get('/admin',[AdminController::class,'dashboard']);
-Route::get('/logout',[AdminController::class,'logout']);
+Route::get('/admin-logout',[AdminController::class,'adminLogout']);
 
 
 
