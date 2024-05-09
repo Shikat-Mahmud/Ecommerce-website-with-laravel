@@ -11,6 +11,7 @@ use App\Models\Size;
 use App\Models\SubCategory;
 use App\Models\Unit;
 use Illuminate\Http\Request;
+use PHPUnit\Framework\Constraint\IsEmpty;
 
 class ProductDetailController extends Controller
 {
@@ -49,17 +50,6 @@ class ProductDetailController extends Controller
         $colors = Color::find($product->color_id);
         
         return view('frontend.sections.modal', compact('product', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
-    }
-
-    public function modalProduct($id){
-        $product = Product::find($id);
-
-        if (! $product)
-        {
-            return response('Unable to find the product', 404);
-        }
-
-        return response($product, 201);
     }
     
 }

@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\ColorController;
 use App\Http\Controllers\backend\ProductController;
 use App\Http\Controllers\backend\SizeController;
 use App\Http\Controllers\backend\SubscriberContrller;
 use App\Http\Controllers\frontend\AllProductController;
 use App\Http\Controllers\frontend\ProductDetailController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\SuperAdminController;
@@ -14,6 +15,29 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\UnitController;
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+
+//============== frontend route ==============//
+Route::get('/',[HomeController::class,'index']);
+
+Route::get('/product-detail/{id}',[ProductDetailController::class,'productDetail'])->name('product.detail');
+Route::get('/product-modal/{id}',[ProductDetailController::class,'modalProductShow'])->name('product.modal');
+Route::get('/product_by_category/{id}',[ProductDetailController::class,'productByCat'])->name('product.by.category');
+
+Route::get('/all-product',[AllProductController::class, 'index'])->name('all.product');
+
+Route::post('/subscribe',[SubscriberContrller::class, 'store'])->name('subscribe');
 
 
 
@@ -62,15 +86,4 @@ Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscrib
 
 
 
-
-//============== frontend route ==============//
-Route::get('/',[HomeController::class,'index']);
-
-Route::get('/product-detail/{id}',[ProductDetailController::class,'productDetail'])->name('product.detail');
-Route::get('/product-modal/{id}',[ProductDetailController::class,'modalProductShow'])->name('product.modal');
-// Route::get('/product-modal/{id}',[ProductDetailController::class,'modalProduct'])->name('product.modal');
-Route::get('/product_by_category/{id}',[ProductDetailController::class,'productByCat'])->name('product.by.category');
-
-Route::get('/all-product',[AllProductController::class, 'index'])->name('all.product');
-
-Route::post('/subscribe',[SubscriberContrller::class, 'store'])->name('subscribe');
+require __DIR__.'/auth.php';
