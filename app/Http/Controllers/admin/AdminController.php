@@ -30,10 +30,38 @@ class AdminController extends Controller
         if($result){
             Session::put('admin_id', $result->admin_id);
             Session::put('admin_name', $result->admin_name);
-            return Redirect::to('/dashboard');
+            return Redirect::to('/admin');
         }
         else{
-            return redirect('/admin')->withErrors(['message' => 'Email or Password invalid'])->withInput();
+            return redirect('/admin-login')->withErrors(['message' => 'Email or Password invalid'])->withInput();
+        }
+    }
+
+
+    public function dashboard(){
+        $this->AdminAuthCheck();
+        return view('admin.dashboard');
+    }
+
+
+    // logout
+
+    public function logout(){
+        Session::flush();
+        return Redirect::to('/admin-login');
+    }
+
+
+    // admin auth check
+
+    public function AdminAuthCheck(){
+        $admin_id=Session::get('admin_id');
+
+        if($admin_id){
+            return;
+        }
+        else{
+            return Redirect::to('/admin-login')->send();
         }
     }
 }

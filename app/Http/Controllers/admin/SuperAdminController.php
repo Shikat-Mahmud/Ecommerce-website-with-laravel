@@ -21,7 +21,7 @@ class SuperAdminController extends Controller
 
     public function logout(){
         Session::flush();
-        return Redirect::to('/admin');
+        return Redirect::to('/admin-login');
     }
 
 
@@ -34,7 +34,7 @@ class SuperAdminController extends Controller
             return;
         }
         else{
-            return Redirect::to('/admin')->send();
+            return Redirect::to('/admin-login')->send();
         }
     }
 

@@ -42,11 +42,11 @@ Route::post('/subscribe',[SubscriberContrller::class, 'store'])->name('subscribe
 
 
 //============== admin route ==============//
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin-login', [AdminController::class, 'index']);
 Route::post('/admin-dashboard',[AdminController::class,'showDashboard']);
 
-Route::get('/dashboard',[SuperAdminController::class,'dashboard']);
-Route::get('/logout',[SuperAdminController::class,'logout']);
+Route::get('/admin',[AdminController::class,'dashboard']);
+Route::get('/logout',[AdminController::class,'logout']);
 
 
 
