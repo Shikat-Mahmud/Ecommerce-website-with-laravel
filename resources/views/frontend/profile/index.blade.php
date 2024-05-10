@@ -15,7 +15,7 @@
         <div class="row">
         <div class="p-4">
                 <div class="max-w-xl">
-                @include('frontend.profile.section.update-password')
+                    @include('frontend.profile.section.update-password')
                 </div>
             </div>
         </div>
@@ -23,7 +23,7 @@
         <div class="row">
         <div class="p-4">
                 <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
+                    @include('frontend.profile.section.delete-profile')
                 </div>
             </div>
         </div>
