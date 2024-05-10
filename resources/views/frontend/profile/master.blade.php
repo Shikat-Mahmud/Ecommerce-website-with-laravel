@@ -12,3 +12,7 @@
   </div>
 </section>
 @endsection
+@push('scripts')
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+@endpush

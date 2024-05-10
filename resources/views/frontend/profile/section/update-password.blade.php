@@ -1,15 +1,15 @@
 <section>
     <header>
-        <h2 class="text-lg font-medium text-gray-900">
+        <h4 class="text-lg font-medium text-gray-900">
             {{ __('Update Password') }}
-        </h2>
+        </h4>
 
-        <p class="mt-1 text-sm text-gray-600">
+        <p class="mt-1 text-sm text-secondary">
             {{ __('Ensure your account is using a long, random password to stay secure.') }}
         </p>
     </header>
 
-    <form method="post" action="{{ route('password.update') }}" class="mt-6">
+    <form method="post" action="{{ route('password.update') }}" class="mt-3">
         @csrf
         @method('put')
 
@@ -38,7 +38,7 @@
         </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-between">
-            <button type="submit" class="btn btn-primary">{{ __('Save') }}</button>
+            <button type="submit" class="btn btn-primary" style="background-color: #717FE0; border: none;">{{ __('Save') }}</button>
 
             @if (session('status') === 'password-updated')
                 <p
