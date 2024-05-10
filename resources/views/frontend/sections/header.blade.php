@@ -136,7 +136,8 @@
 							Help & FAQs
 						</a>
 
-						<a href="{{ route('profile') }}" class="flex-c-m p-lr-10 trans-04">
+						@if(auth()->check())
+						<a href="{{ route('profile') }}" class="flex-c-m trans-04 p-lr-25">
 							My Account
 						</a>
 
@@ -144,6 +145,11 @@
 							@csrf
 							<button type="submit" class="dropdown-item" style="background-color: #E4E1DA;">Logout</button>
 						</form>
+						@else
+						<a href="{{ route('login') }}" class="flex-c-m trans-04 p-lr-25">
+							Login
+						</a>
+						@endif
 
 						<!-- <a href="#" class="flex-c-m p-lr-10 trans-04">
 							EN
