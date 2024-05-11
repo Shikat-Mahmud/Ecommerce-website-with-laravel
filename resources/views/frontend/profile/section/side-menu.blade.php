@@ -6,6 +6,10 @@
     font-weight: 500;
   }
 
+  .profile-logout{
+    color: #b73a3a !important;
+  }
+
   .profile-menu-item:hover{
     color: #2B2D42;
   }
@@ -50,6 +54,15 @@
             <li class="p-2 pl-3 profile-menu" style="{{ Route::is('update.password') ? 'background-color: #717fe0; color: #fff;' : '' }}"><i class="fas fa-key profile-menu-icon"></i> 
               Update Password
             </li>
+          </a>
+          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="profile-menu-item profile-logout">
+            <li class="p-2 pl-3 profile-menu"><i class="fas fa-sign-out-alt profile-menu-icon"></i> 
+              Logout
+            </li>
+          </a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+          </form>
           </a>
         </ul>
       </div>
