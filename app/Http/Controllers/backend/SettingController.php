@@ -17,7 +17,6 @@ class SettingController extends Controller
         $general = ApplicationSetting::latest()->first();
         return view('backend.setting.index', compact('general'));
     }
-
     
     private function setEnv($key, $value)
     {
