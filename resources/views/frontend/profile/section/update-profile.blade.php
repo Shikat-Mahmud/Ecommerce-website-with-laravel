@@ -19,7 +19,7 @@
 
         <div class="mb-3">
             <label for="name" class="form-label stext-101 c15">{{ __('Name') }}</label>
-            <input id="name" name="name" type="text" class="form-control" value="{{ old('name', $user->name) }}" required autofocus autocomplete="name">
+            <input id="name" name="name" type="text" class="form-control" value="{{ old('name', $user->name) }}" required autofocus autocomplete="name" placeholder="Enter your name">
             @error('name')
                 <div class="text-danger mt-2">{{ $message }}</div>
             @enderror
@@ -27,7 +27,7 @@
 
         <div class="mb-3">
             <label for="email" class="form-label stext-101 c15">{{ __('Email') }}</label>
-            <input id="email" name="email" type="email" class="form-control" value="{{ old('email', $user->email) }}" required autocomplete="username">
+            <input id="email" name="email" type="email" class="form-control" value="{{ old('email', $user->email) }}" required autocomplete="username" placeholder="Enter your email">
             @error('email')
                 <div class="text-danger mt-2">{{ $message }}</div>
             @enderror
@@ -49,6 +49,22 @@
                     @endif
                 </div>
             @endif
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label stext-101 c15">{{ __('Phone') }}</label>
+            <input id="phone" name="phone" type="text" class="form-control" value="{{ old('phone', $user->phone) }}" placeholder="Enter your phone number">
+            @error('phone')
+                <div class="text-danger mt-2">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="address" class="form-label stext-101 c15">{{ __('Address') }}</label>
+            <textarea id="address" name="address" class="form-control" placeholder="Enter your address">{{ old('address', $user->address) }}</textarea>
+            @error('address')
+                <div class="text-danger mt-2">{{ $message }}</div>
+            @enderror
         </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-between">
