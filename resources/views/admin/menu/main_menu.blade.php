@@ -13,7 +13,7 @@
 			</li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Sub Category </span></a>
+				<a class="dropmenu" href="#"><i class="icon-folder-open-alt"></i><span class="hidden-tablet"> Sub Category </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/sub-categories/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Sub Category</span></a></li>
 					<li><a class="submenu" href="{{ url('/sub-categories') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Sub Category List</span></a></li>
@@ -21,7 +21,7 @@
 			</li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Brand </span></a>
+				<a class="dropmenu" href="#"><i class="icon-tags"></i><span class="hidden-tablet"> Brand </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/brands/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Brand</span></a></li>
 					<li><a class="submenu" href="{{ url('/brands') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Brand List</span></a></li>
@@ -29,7 +29,7 @@
 			</li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Unit </span></a>
+				<a class="dropmenu" href="#"><i class="icon-list"></i><span class="hidden-tablet"> Unit </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/units/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Unit</span></a></li>
 					<li><a class="submenu" href="{{ url('/units') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Unit List</span></a></li>
@@ -37,7 +37,7 @@
 			</li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Size </span></a>
+				<a class="dropmenu" href="#"><i class="icon-resize-full"></i><span class="hidden-tablet"> Size </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/sizes/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Size</span></a></li>
 					<li><a class="submenu" href="{{ url('/sizes') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Size List</span></a></li>
@@ -45,7 +45,7 @@
 			</li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Color </span></a>
+				<a class="dropmenu" href="#"><i class="icon-tint"></i><span class="hidden-tablet"> Color </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/colors/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Color</span></a></li>
 					<li><a class="submenu" href="{{ url('/colors') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Color List</span></a></li>
@@ -53,17 +53,17 @@
 			</li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Product </span></a>
+				<a class="dropmenu" href="#"><i class="icon-briefcase"></i><span class="hidden-tablet"> Product </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/products/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add Product</span></a></li>
 					<li><a class="submenu" href="{{ url('/products') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Product List</span></a></li>
 				</ul>	
 			</li>
 
-			<li><a href="{{ url('/subscribers') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Subscribers</span></a></li>
+			<li><a href="{{ url('/subscribers') }}"><i class="icon-group"></i><span class="hidden-tablet"> Subscribers</span></a></li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Application Settings </span></a>
+				<a class="dropmenu" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> Application Settings </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/setting') }}"><i class="icon-edit"></i><span class="hidden-tablet"> General Settings</span></a></li>
 					<li><a class="submenu" href="{{ url('/application-cache-clear') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Clear Cache</span></a></li>
