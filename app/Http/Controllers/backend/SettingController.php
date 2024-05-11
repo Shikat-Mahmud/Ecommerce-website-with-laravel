@@ -92,6 +92,6 @@ class SettingController extends Controller
 
     public function cachClear(){
         Artisan::call('cache:clear');
-        return redirect()->route('admin-dashboard')->with('success','Cache Clear Successfully');
+        return redirect('/admin')->with('success', 'Cache Clear Successfully');
     }
 }

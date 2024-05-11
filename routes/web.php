@@ -90,6 +90,7 @@ Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategorie
 //setting routes
 Route::get('/setting', [SettingController::class, 'index'])->name('setting');
 Route::post('/setting-update', [SettingController::class, 'update'])->name('setting-update');
+Route::get('application-cache-clear', [SettingController::class, 'cachClear'])->name('application.cache.clear');
 
 
 require __DIR__.'/auth.php';
