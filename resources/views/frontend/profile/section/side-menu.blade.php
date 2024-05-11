@@ -12,7 +12,7 @@
 
   .profile-menu{
     border-bottom: 1px solid #eee;
-    border-radius: 6px;
+    border-radius: 4px;
   }
 
   .profile-menu:hover{
@@ -47,7 +47,7 @@
             </li>
           </a>
           <a href="{{ route('update.password') }}" class="profile-menu-item">
-            <li class="p-2 pl-3 profile-menu" style="{{ Route::is('update.password') ? 'background-color: #717fe0; color: #fff;' : '' }}"><i class="fas fa-user-edit profile-menu-icon"></i> 
+            <li class="p-2 pl-3 profile-menu" style="{{ Route::is('update.password') ? 'background-color: #717fe0; color: #fff;' : '' }}"><i class="fas fa-key profile-menu-icon"></i> 
               Update Password
             </li>
           </a>
