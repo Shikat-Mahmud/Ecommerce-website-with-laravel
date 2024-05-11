@@ -28,13 +28,25 @@ class ProfileController extends Controller
     {
         $request->user()->fill($request->validated());
 
+            // Handle photo upload
+        if ($request->hasFile('photo')) {
+            // Get the uploaded file
+            $photo = $request->file('photo');
+
+            // Store the uploaded file in the storage disk
+            $path = $photo->store('public/photos');
+
+            // Update the user's photo path in the database
+            $request->user()->photo = $path;
+        }
+
         if ($request->user()->isDirty('email')) {
             $request->user()->email_verified_at = null;
         }
 
         $request->user()->save();
 
-        return Redirect::route('profile')->with('status', 'profile-updated');
+        return Redirect::route('profile')->with('status', 'Profile updated successfully');
     }
 
     /**

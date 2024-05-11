@@ -2,9 +2,9 @@
   <div class="card mb-4" style="border: none;">
     <div class="card-body text-center">
         @if (isset($user->photo))
-        <img src="{{ $user->photo }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+          <img src="{{ asset('storage/' . $user->photo) }}" alt="avatar" class="rounded-circle img-fluid" style="width: 150px; height:150px; object-fit: cover;">
         @else
-        <img src="{{ asset('/') }}frontend/images/user-avatar.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+          <img src="{{ asset('/') }}frontend/images/user-avatar.png" alt="avatar" class="rounded-circle img-fluid" style="width: 150px; height:150px; object-fit: cover;">
         @endif
         <h5 class="m-t-20 mb-1">{{ $user->name }}</h5>
         <p class="text-muted mb-1">{{ $user->email }}</p>

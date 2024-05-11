@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-3">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-3"  enctype="multipart/form-data">
         @csrf
         @method('patch')
 
@@ -63,6 +63,14 @@
             <label for="address" class="form-label stext-101 c15">{{ __('Address') }}</label>
             <textarea id="address" name="address" class="form-control" placeholder="Enter your address">{{ old('address', $user->address) }}</textarea>
             @error('address')
+                <div class="text-danger mt-2">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="photo" class="form-label stext-101 c15">Photo</label>
+            <input id="photo" name="photo" type="file" class="form-control">
+            @error('photo')
                 <div class="text-danger mt-2">{{ $message }}</div>
             @enderror
         </div>
