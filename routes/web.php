@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\frontend\UserProfileController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -86,6 +87,9 @@ Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategorie
 //product routes
 Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscribers');
 
+//setting routes
+Route::get('/setting', [SettingController::class, 'index'])->name('setting');
+Route::post('/setting-update', [SettingController::class, 'update'])->name('setting-update');
 
 
 require __DIR__.'/auth.php';
