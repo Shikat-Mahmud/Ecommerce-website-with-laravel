@@ -8,29 +8,13 @@
 					</h4>
 
 					<ul>
+						@foreach ($categories as $category)
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
+								{{$category->name}}
 							</a>
 						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
+						@endforeach
 					</ul>
 				</div>
 
@@ -133,10 +117,7 @@
 				</div>
 
 				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="https://eftakharmahmud.com/" target="_blank">Eftakhar Mahmud Shikat</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
+					Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="https://eftakharmahmud.com/" target="_blank">Eftakhar Mahmud Shikat</a>
 				</p>
 			</div>
 		</div>
