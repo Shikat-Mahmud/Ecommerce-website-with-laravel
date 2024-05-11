@@ -15,7 +15,7 @@
 
         <div class="mb-3">
             <label for="update_password_current_password" class="form-label stext-101 c15">{{ __('Current Password') }}</label>
-            <input id="update_password_current_password" name="current_password" type="password" class="form-control" autocomplete="current-password">
+            <input id="update_password_current_password" name="current_password" type="password" class="form-control" autocomplete="current-password" placeholder="Enter your current password">
             @error('current_password', 'updatePassword')
                 <div class="text-danger mt-2">{{ $message }}</div>
             @enderror
@@ -23,7 +23,7 @@
 
         <div class="mb-3">
             <label for="update_password_password" class="form-label stext-101 c15">{{ __('New Password') }}</label>
-            <input id="update_password_password" name="password" type="password" class="form-control" autocomplete="new-password">
+            <input id="update_password_password" name="password" type="password" class="form-control" autocomplete="new-password" placeholder="Enter your new password">
             @error('password', 'updatePassword')
                 <div class="text-danger mt-2">{{ $message }}</div>
             @enderror
@@ -31,7 +31,7 @@
 
         <div class="mb-3">
             <label for="update_password_password_confirmation" class="form-label stext-101 c15">{{ __('Confirm Password') }}</label>
-            <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password">
+            <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password" placeholder="Retypw new password">
             @error('password_confirmation', 'updatePassword')
                 <div class="text-danger mt-2">{{ $message }}</div>
             @enderror

@@ -15,8 +15,10 @@
       <div class="card-body p-0">
         <ul class="list-group list-group-flush rounded-3">
           <li class="list-group-item d-flex justify-content-between align-items-center p-3">
-            <i class="fas fa-globe fa-lg text-warning"></i>
-            <p class="mb-0">https://mdbootstrap.com</p>
+            <a href="{{ route('profile') }}">Edit Profile</a>
+          </li>
+          <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+            <a href="{{ route('update.password') }}">Update Password</a>
           </li>
           <li class="list-group-item d-flex justify-content-between align-items-center p-3">
             <i class="fab fa-github fa-lg text-body"></i>

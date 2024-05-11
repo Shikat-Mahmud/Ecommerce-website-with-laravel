@@ -13,4 +13,9 @@ class UserProfileController extends Controller
         $user = Auth::user();
         return view('frontend.profile.index', compact('user'));
     }
+
+    public function updatePass(Request $request){
+        $user = Auth::user();
+        return view('frontend.profile.update-password', compact('user'));
+    }
 }

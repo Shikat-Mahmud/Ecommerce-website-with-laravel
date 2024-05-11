@@ -24,6 +24,7 @@ use App\Http\Controllers\Backend\UnitController;
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserProfileController::class, 'index'])->name('profile');
+    Route::get('/update-password', [UserProfileController::class, 'updatePass'])->name('update.password');
     Route::get('/profile-edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
