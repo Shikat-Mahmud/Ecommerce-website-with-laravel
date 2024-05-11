@@ -46,7 +46,7 @@ class SettingController extends Controller
 
         DB::beginTransaction();
         try {
-            $general = generalSetting();
+            $general = ApplicationSetting::latest()->first();
 
             // Check and update logo
             if ($request->hasFile('logo')) {

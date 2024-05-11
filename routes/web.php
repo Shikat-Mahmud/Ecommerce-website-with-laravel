@@ -42,6 +42,9 @@ Route::get('/product-detail/{id}',[ProductDetailController::class,'productDetail
 Route::get('/product_by_category/{id}',[ProductDetailController::class,'productByCat'])->name('product.by.category');
 });
 
+//subscriber routes
+Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscribers');
+
 
 
 //============== admin route ==============//
@@ -83,9 +86,6 @@ Route::get('/color-status/{color}', [ColorController::class, 'changeStatus'])->n
 Route::resource('products', ProductController::class);
 Route::get('/product-status/{product}', [ProductController::class, 'changeStatus'])->name('change-status');
 Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategories'])->name('fetch.subcategories');
-
-//product routes
-Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscribers');
 
 //setting routes
 Route::get('/setting', [SettingController::class, 'index'])->name('setting');
