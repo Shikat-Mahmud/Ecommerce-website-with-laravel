@@ -18,14 +18,14 @@
 							
 							<!-- Email Address -->
 							<div class="mb-3">
-								<label for="email" class="form-label">Email</label>
+								<label for="email" class="form-label stext-101 c15">Email</label>
 								<input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" placeholder="Enter your email">
 								<x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
 							</div>
 							
 							<!-- Password -->
 							<div class="mb-3">
-								<label for="password" class="form-label">Password</label>
+								<label for="password" class="form-label stext-101 c15">Password</label>
 								<input id="password" class="form-control" type="password" name="password" required autocomplete="current-password" placeholder="Enter your password">
 								<x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
 							</div>
@@ -38,16 +38,16 @@
 							
 							<div class="mb-4">
 								@if (Route::has('password.request'))
-								<a href="{{ route('password.request') }}" style="color: #717FE0;">{{ __('Forgot your password?') }}</a>
+								<a href="{{ route('password.request') }}" style="color: #717fe0;">{{ __('Forgot your password?') }}</a>
 								@endif
 							</div>
 
 							<div class="pt-3 mb-3">
-								<button type="submit" class="btn btn-primary w-100" style="background-color: #717FE0; border: none;">{{ __('Log in') }}</button>
+								<button type="submit" class="btn btn-primary w-100 stext-101" style="background-color: #717fe0; border: none;">{{ __('Log in') }}</button>
 							</div>
 
 							<div class="mt-4 text-center">
-								<a class="text-dark" href="{{ route('register') }}">Don't have an account? <span style="color: #717FE0;">Register Now</span></a>
+								<a class="text-dark" href="{{ route('register') }}">Don't have an account? <span style="color: #717fe0;">Register Now</span></a>
 							</div>
 						</form>
 					</div>

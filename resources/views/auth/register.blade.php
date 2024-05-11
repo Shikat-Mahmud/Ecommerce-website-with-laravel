@@ -18,38 +18,38 @@
 
                             <!-- Name -->
                             <div class="mb-3">
-                                <label for="name" class="form-label">{{ __('Name') }}</label>
+                                <label for="name" class="form-label stext-101 c15">{{ __('Name') }}</label>
                                 <input id="name" class="form-control" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" placeholder="Enter your name">
                                 <x-input-error :messages="$errors->get('name')" class="mt-2 text-danger" />
                             </div>
 
                             <!-- Email Address -->
                             <div class="mb-3">
-                                <label for="email" class="form-label">{{ __('Email') }}</label>
+                                <label for="email" class="form-label stext-101 c15">{{ __('Email') }}</label>
                                 <input id="email" class="form-control" type="email" name="email" :value="old('email')" required autocomplete="username" placeholder="Enter your email">
                                 <x-input-error :messages="$errors->get('email')" class="mt-2 text-danger" />
                             </div>
 
                             <!-- Password -->
                             <div class="mb-3">
-                                <label for="password" class="form-label">{{ __('Password') }}</label>
+                                <label for="password" class="form-label stext-101 c15">{{ __('Password') }}</label>
                                 <input id="password" class="form-control" type="password" name="password" required autocomplete="new-password" placeholder="Enter your password">
                                 <x-input-error :messages="$errors->get('password')" class="mt-2 text-danger" />
                             </div>
 
                             <!-- Confirm Password -->
                             <div class="mb-3">
-                                <label for="password_confirmation" class="form-label">{{ __('Confirm Password') }}</label>
+                                <label for="password_confirmation" class="form-label stext-101 c15">{{ __('Confirm Password') }}</label>
                                 <input id="password_confirmation" class="form-control" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm your password">
                                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2 text-danger" />
                             </div>
                             
                             <div class="pt-3 mb-3">
-                                <button type="submit" class="btn btn-primary ms-4 w-100" style="background-color: #717FE0; border: none;">{{ __('Register') }}</button>
+                                <button type="submit" class="btn btn-primary ms-4 w-100 stext-101" style="background-color: #717fe0; border: none;">{{ __('Register') }}</button>
                             </div>
 
                             <div class="mt-4 text-center">
-                                <a class="text-dark" href="{{ route('login') }}">Already registered? <span style="color: #717FE0;">Login Now</span>
+                                <a class="text-dark" href="{{ route('login') }}">Already registered? <span style="color: #717fe0;">Login Now</span>
                                 </a>
                             </div>
                         </form>
