@@ -1,6 +1,6 @@
 <section>
     <header>
-        <h4 class="text-lg font-medium text-gray-900">
+        <h4 class="text-lg font-medium">
             {{ __('Update Password') }}
         </h4>
 
@@ -14,7 +14,7 @@
         @method('put')
 
         <div class="mb-3">
-            <label for="update_password_current_password" class="form-label">{{ __('Current Password') }}</label>
+            <label for="update_password_current_password" class="form-label stext-101 c15">{{ __('Current Password') }}</label>
             <input id="update_password_current_password" name="current_password" type="password" class="form-control" autocomplete="current-password">
             @error('current_password', 'updatePassword')
                 <div class="text-danger mt-2">{{ $message }}</div>
@@ -22,7 +22,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="update_password_password" class="form-label">{{ __('New Password') }}</label>
+            <label for="update_password_password" class="form-label stext-101 c15">{{ __('New Password') }}</label>
             <input id="update_password_password" name="password" type="password" class="form-control" autocomplete="new-password">
             @error('password', 'updatePassword')
                 <div class="text-danger mt-2">{{ $message }}</div>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="update_password_password_confirmation" class="form-label">{{ __('Confirm Password') }}</label>
+            <label for="update_password_password_confirmation" class="form-label stext-101 c15">{{ __('Confirm Password') }}</label>
             <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password">
             @error('password_confirmation', 'updatePassword')
                 <div class="text-danger mt-2">{{ $message }}</div>
@@ -38,7 +38,7 @@
         </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-between">
-            <button type="submit" class="btn btn-primary" style="background-color: #717FE0; border: none;">{{ __('Save') }}</button>
+            <button type="submit" class="btn btn-primary stext-115" style="background-color: #717fe0; border: none;">{{ __('Save') }}</button>
 
             @if (session('status') === 'password-updated')
                 <p

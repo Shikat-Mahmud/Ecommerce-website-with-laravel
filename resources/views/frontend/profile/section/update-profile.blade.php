@@ -1,6 +1,6 @@
 <section>
     <header>
-        <h4 class="text-lg font-medium text-gray-900">
+        <h4 class="text-lg font-medium">
             {{ __('Profile Information') }}
         </h4>
 
@@ -18,7 +18,7 @@
         @method('patch')
 
         <div class="mb-3">
-            <label for="name" class="form-label">{{ __('Name') }}</label>
+            <label for="name" class="form-label stext-101 c15">{{ __('Name') }}</label>
             <input id="name" name="name" type="text" class="form-control" value="{{ old('name', $user->name) }}" required autofocus autocomplete="name">
             @error('name')
                 <div class="text-danger mt-2">{{ $message }}</div>
@@ -26,7 +26,7 @@
         </div>
 
         <div class="mb-3">
-            <label for="email" class="form-label">{{ __('Email') }}</label>
+            <label for="email" class="form-label stext-101 c15">{{ __('Email') }}</label>
             <input id="email" name="email" type="email" class="form-control" value="{{ old('email', $user->email) }}" required autocomplete="username">
             @error('email')
                 <div class="text-danger mt-2">{{ $message }}</div>
@@ -52,7 +52,7 @@
         </div>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-between">
-            <button type="submit" class="btn btn-primary" style="background-color: #717FE0; border: none;">{{ __('Update') }}</button>
+            <button type="submit" class="btn btn-primary stext-115" style="background-color: #717fe0; border: none;">{{ __('Update') }}</button>
 
             @if (session('status') === 'profile-updated')
                 <p

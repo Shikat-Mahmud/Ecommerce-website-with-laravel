@@ -1,6 +1,6 @@
 @extends('frontend.master')
 @section('content')
-<section style="background-color: #eee;">
+<section style="background-color: #EEEEEE;">
   <div class="container py-5">
 
     <div class="row py-lg-5 py-0 mt-lg-4 mt-0">

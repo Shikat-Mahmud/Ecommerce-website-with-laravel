@@ -9,7 +9,7 @@
         </p>
     </header>
 
-    <button type="button" class="btn btn-danger mt-3" data-bs-toggle="modal" data-bs-target="#confirm-user-deletion" style="background-color: #b73a3a; border: none;">
+    <button type="button" class="btn btn-danger mt-3 stext-115" data-bs-toggle="modal" data-bs-target="#confirm-user-deletion" style="background-color: #b73a3a; border: none;">
         {{ __('Delete Account') }}
     </button>
 
@@ -29,7 +29,7 @@
                     </p>
 
                     <div class="mt-3">
-                        <label for="password" class="form-label visually-hidden">{{ __('Password') }}</label>
+                        <label for="password" class="form-label visually-hidden stext-101 c15">{{ __('Password') }}</label>
                         <input id="password" name="password" type="password" class="form-control" placeholder="{{ __('Password') }}">
                         @error('password', 'userDeletion')
                             <div class="text-danger mt-2">{{ $message }}</div>
@@ -37,11 +37,11 @@
                     </div>
 
                     <div class="mt-3 d-flex justify-content-end">
-                        <button type="button" class="btn btn-secondary m-r-5" data-bs-dismiss="modal">
+                        <button type="button" class="btn btn-secondary m-r-5 stext-115" data-bs-dismiss="modal">
                             {{ __('Cancel') }}
                         </button>
 
-                        <button type="submit" class="btn btn-danger ms-3" style="background-color: #b73a3a; border: none;">
+                        <button type="submit" class="btn btn-danger ms-3 stext-115" style="background-color: #b73a3a; border: none;">
                             {{ __('Delete Account') }}
                         </button>
                     </div>
