@@ -2,7 +2,7 @@
 <style>
   .profile-menu-item{
     color: #2B2D42;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
   }
 
@@ -56,7 +56,7 @@
             </li>
           </a>
           <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="profile-menu-item profile-logout">
-            <li class="p-2 pl-3 profile-menu"><i class="fas fa-sign-out-alt profile-menu-icon"></i> 
+            <li class="p-2 pl-3 profile-menu" style="border: none;"><i class="fas fa-sign-out-alt profile-menu-icon"></i> 
               Logout
             </li>
           </a>

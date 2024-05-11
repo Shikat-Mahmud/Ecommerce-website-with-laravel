@@ -18,10 +18,7 @@ use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\UnitController;
 
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
+//============== profile route ==============//
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [UserProfileController::class, 'index'])->name('profile');
     Route::get('/update-password', [UserProfileController::class, 'updatePass'])->name('update.password');
