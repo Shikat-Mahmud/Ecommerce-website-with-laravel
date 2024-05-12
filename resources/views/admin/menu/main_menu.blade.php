@@ -77,6 +77,14 @@
 					<li><a class="submenu" href="{{ url('/application-cache-clear') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Clear Cache</span></a></li>
 				</ul>	
 			</li>
+
+			<li>
+				<a class="dropmenu" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> Links </span></a>
+				<ul>
+					<li><a class="submenu" href="{{ url('/about-us') }}"><i class="icon-edit"></i><span class="hidden-tablet"> About Us</span></a></li>
+					<li><a class="submenu" href="{{ url('/application-cache-clear') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Clear Cache</span></a></li>
+				</ul>	
+			</li>
 			
 		</ul>
 	</div>
