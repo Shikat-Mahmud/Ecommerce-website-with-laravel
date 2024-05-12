@@ -51,8 +51,8 @@
 				<tbody>
 					<tr>
 						<td>{{ $faq->id }}</td>
-						<td class="center">{{ $faq->name }}</td>
-						<td class="center">{!! $faq->description !!}</td>
+						<td class="center">{{ $faq->question }}</td>
+						<td class="center">{!! $faq->answer !!}</td>
 						<td class="center">
 							@if($faq->status==1)
 							<span class="label label-success">Active</span>

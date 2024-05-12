@@ -65,7 +65,7 @@
 			<li>
 				<a class="dropmenu" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> FAQs </span></a>
 				<ul>
-					<li><a class="submenu" href="{{ url('/brands/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add FAQ</span></a></li>
+					<li><a class="submenu" href="{{ url('/faqs/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add FAQ</span></a></li>
 					<li><a class="submenu" href="{{ url('/faqs') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> FAQ List</span></a></li>
 				</ul>	
 			</li>
