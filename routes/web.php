@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\backend\FaqController;
+use App\Http\Controllers\backend\LinkController;
 use App\Http\Controllers\backend\SettingController;
 use App\Http\Controllers\frontend\UserProfileController;
 use App\Http\Controllers\ProfileController;
@@ -41,8 +43,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/product-detail/{id}',[ProductDetailController::class,'productDetail'])->name('product.detail');
 Route::get('/product_by_category/{id}',[ProductDetailController::class,'productByCat'])->name('product.by.category');
 });
-
-Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscribers');
 
 Route::get('/about',[HomeController::class, 'about'])->name('about');
 
@@ -92,10 +92,20 @@ Route::resource('products', ProductController::class);
 Route::get('/product-status/{product}', [ProductController::class, 'changeStatus'])->name('change-status');
 Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategories'])->name('fetch.subcategories');
 
+//subscriber routes
+Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscribers');
+
+//faq routes
+Route::resource('faqs', FaqController::class);
+
 //setting routes
 Route::get('/setting', [SettingController::class, 'index'])->name('setting');
 Route::post('/setting-update', [SettingController::class, 'update'])->name('setting-update');
 Route::get('application-cache-clear', [SettingController::class, 'cachClear'])->name('application.cache.clear');
+
+//links routes
+Route::get('/about-us', [LinkController::class, 'aboutUs'])->name('about.us');
+Route::get('/contact-us', [LinkController::class, 'contactUs'])->name('contact.us');
 
 
 require __DIR__.'/auth.php';

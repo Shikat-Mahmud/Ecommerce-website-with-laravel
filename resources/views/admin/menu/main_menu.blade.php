@@ -63,6 +63,14 @@
 			<li><a href="{{ url('/subscribers') }}"><i class="icon-group"></i><span class="hidden-tablet"> Subscribers</span></a></li>
 
 			<li>
+				<a class="dropmenu" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> FAQs </span></a>
+				<ul>
+					<li><a class="submenu" href="{{ url('/brands/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add FAQ</span></a></li>
+					<li><a class="submenu" href="{{ url('/faqs') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> FAQ List</span></a></li>
+				</ul>	
+			</li>
+
+			<li>
 				<a class="dropmenu" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> Application Settings </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/setting') }}"><i class="icon-edit"></i><span class="hidden-tablet"> General Settings</span></a></li>
