@@ -63,7 +63,7 @@
 			<li><a href="{{ url('/subscribers') }}"><i class="icon-group"></i><span class="hidden-tablet"> Subscribers</span></a></li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> FAQs </span></a>
+				<a class="dropmenu" href="#"><i class="icon-question-sign"></i><span class="hidden-tablet"> FAQs </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/faqs/create') }}"><i class="icon-edit"></i><span class="hidden-tablet"> Add FAQ</span></a></li>
 					<li><a class="submenu" href="{{ url('/faqs') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> FAQ List</span></a></li>
@@ -79,7 +79,7 @@
 			</li>
 
 			<li>
-				<a class="dropmenu" href="#"><i class="icon-cog"></i><span class="hidden-tablet"> Links </span></a>
+				<a class="dropmenu" href="#"><i class="icon-link"></i></i><span class="hidden-tablet"> Links </span></a>
 				<ul>
 					<li><a class="submenu" href="{{ url('/about-us') }}"><i class="icon-edit"></i><span class="hidden-tablet"> About Us</span></a></li>
 					<li><a class="submenu" href="{{ url('/application-cache-clear') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Clear Cache</span></a></li>
