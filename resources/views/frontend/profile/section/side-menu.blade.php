@@ -15,8 +15,8 @@
   }
 
   .profile-menu{
-    border-bottom: 1px solid #eee;
-    border-radius: 4px;
+    border-bottom: 1px solid #2B2D42;
+    border-radius: 0px;
   }
 
   .profile-menu:hover{
@@ -26,6 +26,17 @@
   .profile-menu-icon{
     font-size: 15px;
     margin-right: 5px;
+  }
+
+  .active-pro-menu{
+    border-bottom: none;
+    border-radius: 4px;
+    background-color: #717fe0; 
+    color: #fff;
+  }
+
+  .active-pro-menu:hover{
+    background-color: #717fe0; 
   }
 </style>
 @endpush
@@ -46,12 +57,12 @@
       <div class="card-body p-10 my-4">
         <ul class="list-group list-group-flush rounded-3">
           <a href="{{ route('profile') }}" class="profile-menu-item">
-            <li class="p-2 pl-3 profile-menu" style="{{ Route::is('profile') ? 'background-color: #717fe0; color: #fff;' : '' }}"><i class="fas fa-user-edit profile-menu-icon"></i> 
+            <li class="p-2 pl-3 profile-menu {{ Route::is('profile') ? 'active-pro-menu' : '' }}"><i class="fas fa-user-edit profile-menu-icon"></i> 
               Edit Profile
             </li>
           </a>
           <a href="{{ route('update.password') }}" class="profile-menu-item">
-            <li class="p-2 pl-3 profile-menu" style="{{ Route::is('update.password') ? 'background-color: #717fe0; color: #fff;' : '' }}"><i class="fas fa-key profile-menu-icon"></i> 
+            <li class="p-2 pl-3 profile-menu {{ Route::is('update.password') ? 'active-pro-menu' : '' }}"><i class="fas fa-key profile-menu-icon"></i> 
               Update Password
             </li>
           </a>
