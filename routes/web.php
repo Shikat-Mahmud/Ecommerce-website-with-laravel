@@ -97,6 +97,7 @@ Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscrib
 
 //faq routes
 Route::resource('faqs', FaqController::class);
+Route::get('/faq-status/{faq}', [FaqController::class, 'changeStatus'])->name('change-status');
 
 //setting routes
 Route::get('/setting', [SettingController::class, 'index'])->name('setting');

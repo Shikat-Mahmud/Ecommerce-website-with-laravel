@@ -64,22 +64,22 @@
 							<div class="span2"></div>
 							<div class="span2">
 								@if($faq->status==1)
-								<a class="btn btn-success" href="{{ url('/brand-status/' . $faq->id) }}">
+								<a class="btn btn-success" href="{{ url('/faq-status/' . $faq->id) }}">
 									<i class="halflings-icon white thumbs-down"></i>
 								</a>
 								@else
-								<a class="btn btn-danger" href="{{ url('/brand-status/' . $faq->id) }}">
+								<a class="btn btn-danger" href="{{ url('/faq-status/' . $faq->id) }}">
 									<i class="halflings-icon white thumbs-up"></i>
 								</a>
 								@endif
 							</div>
 							<div class="span2">
-								<a class="btn btn-info" href="{{ url('/brands/' . $faq->id . '/edit') }}">
+								<a class="btn btn-info" href="{{ url('/faqs/' . $faq->id . '/edit') }}">
 									<i class="halflings-icon white edit"></i>
 								</a>
 							</div>
 							<div class="span2">
-							<form action="{{ url('/brands/' .$faq->id) }}" method="post" >
+							<form action="{{ url('/faqs/' .$faq->id) }}" method="post" >
 								@csrf
 								@method('DELETE')
 								<button class="btn btn-danger" type="submit"><i class="halflings-icon white trash"></i></button>
