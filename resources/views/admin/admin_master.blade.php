@@ -50,7 +50,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="{{ url('/') }}"><span>Shikat Mahmud</span></a>
+
+				@php
+					$gs = generalSetting();
+				@endphp
+
+				<a class="brand" href="{{ url('/') }}"><span>{{ $gs->business_name }}</span></a>
 
 				@include('admin.menu.header_menu')
 
