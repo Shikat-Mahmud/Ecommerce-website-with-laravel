@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Faq;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Category;
@@ -38,6 +39,7 @@ class HomeController extends Controller
     }
 
     public function faq(){
-        return view('frontend.main.faq');
+        $faqs = Faq::latest()->limit(10)->get();
+        return view('frontend.main.faq', compact('faqs'));
     }
 }

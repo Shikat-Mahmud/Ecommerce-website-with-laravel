@@ -13,7 +13,6 @@
 					@endphp
 					<ul>
 						<li class="p-b-10">
-						
 							<span class="stext-107 cl7 trans-04"><i class="fas fa-envelope m-r-5"></i> {{ $gs->business_email }}</span> 
 						</li>
 
