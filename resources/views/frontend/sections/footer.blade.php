@@ -64,19 +64,19 @@
 
 					<ul>
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="{{ url('/faq') }}" class="stext-107 cl7 hov-cl1 trans-04">
 								FAQs 
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="{{ url('/about') }}" class="stext-107 cl7 hov-cl1 trans-04">
 								About
 							</a>
 						</li>
 
 						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
+							<a href="{{ url('/contact') }}" class="stext-107 cl7 hov-cl1 trans-04">
 								Contact
 							</a>
 						</li>
