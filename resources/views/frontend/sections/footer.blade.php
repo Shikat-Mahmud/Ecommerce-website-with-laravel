@@ -9,19 +9,19 @@
 					</h4>
 
 					@php
-						// $gs = generalSetting();
+						$gs = generalSetting();
 					@endphp
 					<ul>
 						<li class="p-b-10">
-							<span class="stext-107 cl7 hov-cl1 trans-04">Business Name</span> 
+							<span class="stext-107 cl7 hov-cl1 trans-04">{{ $gs->business_email }}</span> 
 						</li>
 
 						<li class="p-b-10">
-							<span class="stext-107 cl7 hov-cl1 trans-04">WhatsApp Number</span> 
+							<span class="stext-107 cl7 hov-cl1 trans-04">{{ $gs->business_whatsapp }}</span> 
 						</li>
 
 						<li class="p-b-10">
-							<span class="stext-107 cl7 hov-cl1 trans-04">Business Address</span> 
+							<span class="stext-107 cl7 hov-cl1 trans-04">{{ $gs->business_address }}</span> 
 						</li>
 					</ul>
 					
