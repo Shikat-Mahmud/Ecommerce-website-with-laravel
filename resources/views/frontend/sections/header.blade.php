@@ -42,11 +42,13 @@
 
 			<div class="wrap-menu-desktop">
 				<nav class="limiter-menu-desktop container">
-					
+					@php
+						$gs = generalSetting();
+					@endphp
 					<!-- Logo desktop -->		
 					<a href="{{url('/')}}" class="logo" style="color: #333333;">
-						<!-- <img src="{{ asset('/') }}frontend/images/icons/logo-01.png" alt="IMG-LOGO"> -->
-						<h2>StyleSync</h2>
+						<img src="{{ asset('storage/' . $gs->logo) }}" alt="IMG-LOGO">
+						<!-- <h2>StyleSync</h2> -->
 					</a>
 
 					<!-- Menu desktop -->
