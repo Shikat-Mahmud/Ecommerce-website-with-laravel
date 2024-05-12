@@ -14,7 +14,7 @@ class SettingController extends Controller
 {
     public function index()
     {
-        $general = ApplicationSetting::latest()->first();
+        $general = generalSetting();
         return view('backend.setting.index', compact('general'));
     }
     
@@ -45,7 +45,7 @@ class SettingController extends Controller
 
         DB::beginTransaction();
         try {
-            $general = ApplicationSetting::latest()->first();
+            $general = generalSetting();
 
             // Check and update logo
             if ($request->hasFile('logo')) {
