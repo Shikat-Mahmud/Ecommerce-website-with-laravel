@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\About;
 use Illuminate\Http\Request;
 use App\Models\Brand;
 use App\Models\Category;
@@ -28,7 +29,8 @@ class HomeController extends Controller
     }
     
     public function about(){
-        return view('frontend.main.about');
+        $about = About::first();
+        return view('frontend.main.about', compact('about'));
     }
 
     public function contact(){
