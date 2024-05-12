@@ -37,10 +37,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('/') }}frontend/css/font-awesome.min.css">
 <!--===============================================================================================-->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-
+	<link rel="stylesheet" href="{{ asset('/') }}frontend/fonts/font-awesome-4.7.0/css/all.min.css">
 
     {{-- toaster --}}
     <link rel="stylesheet" href="{{ asset('frontend/css/toastr.min.css') }}">
