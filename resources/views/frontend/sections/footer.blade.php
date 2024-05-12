@@ -13,15 +13,16 @@
 					@endphp
 					<ul>
 						<li class="p-b-10">
-							<span class="stext-107 cl7 hov-cl1 trans-04">{{ $gs->business_email }}</span> 
+						
+							<span class="stext-107 cl7 trans-04"><i class="fas fa-envelope m-r-5"></i> {{ $gs->business_email }}</span> 
 						</li>
 
 						<li class="p-b-10">
-							<span class="stext-107 cl7 hov-cl1 trans-04">{{ $gs->business_whatsapp }}</span> 
+							<span class="stext-107 cl7 trans-04"><i class="fab fa-whatsapp m-r-5"></i> {{ $gs->business_whatsapp }}</span> 
 						</li>
 
 						<li class="p-b-10">
-							<span class="stext-107 cl7 hov-cl1 trans-04">{{ $gs->business_address }}</span> 
+							<span class="stext-107 cl7 trans-04"><i class="fas fa-map-marker-alt m-r-5"></i> {{ $gs->business_address }}</span> 
 						</li>
 					</ul>
 					
