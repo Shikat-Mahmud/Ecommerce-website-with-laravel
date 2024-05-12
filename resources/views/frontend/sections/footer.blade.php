@@ -8,15 +8,23 @@
 						GET IN TOUCH
 					</h4>
 
-					<p class="stext-107 cl7 size-201 p-b-10">
-						Any questions? Let us know 
-					</p>
+					@php
+						// $gs = generalSetting();
+					@endphp
+					<ul>
+						<li class="p-b-10">
+							<span class="stext-107 cl7 hov-cl1 trans-04">Business Name</span> 
+						</li>
 
-					<li class="p-b-10">
-						<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-							Returns 
-						</a>
-					</li>
+						<li class="p-b-10">
+							<span class="stext-107 cl7 hov-cl1 trans-04">WhatsApp Number</span> 
+						</li>
+
+						<li class="p-b-10">
+							<span class="stext-107 cl7 hov-cl1 trans-04">Business Address</span> 
+						</li>
+					</ul>
+					
 
 					<!-- <div class="p-t-27">
 						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
@@ -57,25 +65,19 @@
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
+								FAQs 
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns 
+								About
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
+								Contact
 							</a>
 						</li>
 					</ul>
@@ -100,7 +102,7 @@
 				</div>
 			</div>
 
-			<div class="p-t-40">
+			<div class="p-t-20">
 				<hr style="background-color: #fff;">
 				<!-- <div class="flex-c-m flex-w p-b-18">
 					<a href="#" class="m-all-1">
