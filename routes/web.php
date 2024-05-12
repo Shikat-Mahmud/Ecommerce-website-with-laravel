@@ -42,8 +42,11 @@ Route::get('/product-detail/{id}',[ProductDetailController::class,'productDetail
 Route::get('/product_by_category/{id}',[ProductDetailController::class,'productByCat'])->name('product.by.category');
 });
 
-//subscriber routes
 Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscribers');
+
+Route::get('/about',[HomeController::class, 'about'])->name('about');
+
+Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
 
 
 

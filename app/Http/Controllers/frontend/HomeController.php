@@ -26,4 +26,12 @@ class HomeController extends Controller
 
         return view('frontend.main.home', compact('products', 'categories', 'subcategories', 'brands', 'units', 'sizes', 'colors'));
     }
+    
+    public function about(){
+        return view('frontend.main.about');
+    }
+
+    public function contact(){
+        return view('frontend.main.contact');
+    }
 }
