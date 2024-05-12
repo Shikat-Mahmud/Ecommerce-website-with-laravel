@@ -13,4 +13,20 @@ class LinkController extends Controller
         $abouts = About::all();
         return view('backend.link.about', compact('abouts'));
     }
+
+    public function editAboutUs(About $about)
+    {
+        return view('backend.link.edit_about', compact('about'));
+    }
+
+    public function updateAboutUs(Request $request, About $about)
+    {
+        $update=$about->update([
+            'title'=> $request->title,
+            'description'=> $request->description,
+        ]);
+
+        if($update)
+            return redirect('/about-us')->with('message','About Updated Successfully');
+    }
 }

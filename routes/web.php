@@ -106,6 +106,8 @@ Route::get('application-cache-clear', [SettingController::class, 'cachClear'])->
 
 //links routes
 Route::get('/about-us', [LinkController::class, 'aboutUs'])->name('about.us');
+Route::get('/edit-about-us/{about}', [LinkController::class, 'editAboutUs'])->name('edit.about.us');
+Route::post('/update-about-us/{about}', [LinkController::class, 'updateAboutUs'])->name('update.about.us');
 Route::get('/contact-us', [LinkController::class, 'contactUs'])->name('contact.us');
 
 

@@ -55,7 +55,7 @@
 						<td class="row">
 							<div class="span2"></div>
 							<div class="span2">
-								<a class="btn btn-info" href="{{ url('/faqs/' . $about->id . '/edit') }}">
+								<a class="btn btn-info" href="{{ url('/edit-about-us/' . $about->id) }}">
 									<i class="halflings-icon white edit"></i>
 								</a>
 							</div>
