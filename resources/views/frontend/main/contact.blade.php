@@ -1,5 +1,5 @@
 @extends('frontend.master')
-@section('title','Ecommerce Website')
+@section('title','Contact')
 
 @section('content')
 

@@ -10,7 +10,7 @@
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
+						<a href="{{ route('faq') }}" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
 						</a>
 
@@ -134,7 +134,7 @@
 
 				<li>
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m p-lr-10 trans-04">
+						<a href="{{ route('faq') }}" class="flex-c-m p-lr-10 trans-04">
 							Help & FAQs
 						</a>
 
@@ -176,11 +176,11 @@
 				@endforeach
 
 				<li>
-					<a href="#">About</a>
+					<a href="{{ url('/about') }}">About</a>
 				</li>
 
 				<li>
-					<a href="#">Contact</a>
+					<a href="{{ url('/contact') }}">Contact</a>
 				</li>
 			</ul>
 		</div>
