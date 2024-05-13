@@ -31,7 +31,7 @@
 
         <div class="mb-3">
             <label for="update_password_password_confirmation" class="form-label stext-101 c15">{{ __('Confirm Password') }}</label>
-            <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password" placeholder="Retypw new password">
+            <input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-control" autocomplete="new-password" placeholder="Retype new password">
             @error('password_confirmation', 'updatePassword')
                 <div class="text-danger mt-2">{{ $message }}</div>
             @enderror
