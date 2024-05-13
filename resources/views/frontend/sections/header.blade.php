@@ -64,11 +64,11 @@
 							</li>
 							@endforeach
 
-							<li class="{{ Request::is('/about') ? 'active-menu' : '' }}">
+							<li class="{{ Request::is('about') ? 'active-menu' : '' }}">
 								<a href="{{ url('/about') }}">About</a>
 							</li>
 
-							<li class="{{ Request::is('/contact') ? 'active-menu' : '' }}">
+							<li class="{{ Request::is('contact') ? 'active-menu' : '' }}">
 								<a href="{{ url('/contact') }}">Contact</a>
 							</li>
 						</ul>
