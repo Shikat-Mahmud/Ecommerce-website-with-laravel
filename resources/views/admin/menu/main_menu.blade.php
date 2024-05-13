@@ -81,8 +81,8 @@
 			<li>
 				<a class="dropmenu" href="#"><i class="icon-link"></i></i><span class="hidden-tablet"> Links </span></a>
 				<ul>
-					<li><a class="submenu" href="{{ url('/about-us') }}"><i class="icon-edit"></i><span class="hidden-tablet"> About Us</span></a></li>
-					<li><a class="submenu" href="{{ url('/application-cache-clear') }}"><i class="icon-file-alt"></i><span class="hidden-tablet"> Clear Cache</span></a></li>
+					<li><a class="submenu" href="{{ url('/about-us') }}"><i class="icon-info-sign"></i><span class="hidden-tablet"> About Us</span></a></li>
+					<li><a class="submenu" href="{{ url('/contact-us') }}"><i class="icon-phone"></i><span class="hidden-tablet"> Contact Us</span></a></li>
 				</ul>	
 			</li>
 			

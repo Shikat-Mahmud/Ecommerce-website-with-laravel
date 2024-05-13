@@ -4,6 +4,7 @@ namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class LinkController extends Controller
@@ -29,5 +30,11 @@ class LinkController extends Controller
 
         if($update)
             return redirect('/about-us')->with('message','About Updated Successfully');
+    }
+
+    public function contactUs()
+    {
+        $contacts = Contact::all();
+        return view('backend.link.contact', compact('contacts'));
     }
 }
