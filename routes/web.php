@@ -35,7 +35,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/',[HomeController::class,'index']);
 
 Route::get('/all-product',[AllProductController::class, 'index'])->name('all.product');
-Route::post('/subscribe',[SubscriberContrller::class, 'store'])->name('subscribe');
 
 Route::get('/product-modal/{id}',[ProductDetailController::class,'modalProductShow'])->name('product.modal');
 
@@ -94,6 +93,7 @@ Route::get('/fetch-subcategories', [ProductController::class, 'fetchSubcategorie
 
 //subscriber routes
 Route::get('/subscribers',[SubscriberContrller::class, 'index'])->name('subscribers');
+Route::post('/subscribe',[SubscriberContrller::class, 'store'])->name('subscribe');
 
 //faq routes
 Route::resource('faqs', FaqController::class);
@@ -109,6 +109,7 @@ Route::get('/about-us', [LinkController::class, 'aboutUs'])->name('about.us');
 Route::get('/edit-about-us/{about}', [LinkController::class, 'editAboutUs'])->name('edit.about.us');
 Route::post('/update-about-us/{about}', [LinkController::class, 'updateAboutUs'])->name('update.about.us');
 Route::get('/contact-us', [LinkController::class, 'contactUs'])->name('contact.us');
+Route::post('/contact-us',[LinkController::class, 'storeContact'])->name('store.contact');
 
 
 require __DIR__.'/auth.php';

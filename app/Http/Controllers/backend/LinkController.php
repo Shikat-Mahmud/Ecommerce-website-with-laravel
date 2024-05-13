@@ -37,4 +37,23 @@ class LinkController extends Controller
         $contacts = Contact::all();
         return view('backend.link.contact', compact('contacts'));
     }
+
+    public function storeContact(Request $request)
+    {
+        try {
+            $request->validate([
+                'email' => 'required|string',
+                'message' => 'required|string',
+            ]);
+
+            Contact::create([
+                'email' => $request->input('email'),
+                'message' => $request->input('message')
+            ]);
+
+            return redirect()->back()->with('success', 'Form submitted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->withInput()->with('error', $e->getMessage());
+        }
+    }
 }
