@@ -39,7 +39,11 @@
 				<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
 					<div class="how-bor2">
 						<div class="hov-img0">
+						@if (isset($about->image))
+							<img src="{{ asset('storage/' . $faq->image) }}" alt="IMG">
+							@else
 							<img src="{{ asset('/') }}frontend/images/about-02.jpg" alt="IMG">
+							@endif
 						</div>
 					</div>
 				</div>
