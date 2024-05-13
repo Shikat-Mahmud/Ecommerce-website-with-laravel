@@ -21,9 +21,9 @@
 							{{ $about->title }}
 						</h3>
 
-						<p class="stext-113 cl6 p-b-26">
-							{{ $about->description }}
-						</p>
+						<div class="stext-113 cl6 p-b-26">
+							{!! $about->description !!}
+						</div>
 
 					</div>
 				</div>

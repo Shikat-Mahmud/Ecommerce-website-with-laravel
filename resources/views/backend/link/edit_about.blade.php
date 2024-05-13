@@ -57,7 +57,13 @@
                         <div class="controls">
                             <textarea class="cleditor" name="description" rows="3" >{{ $about->description }}</textarea>
                         </div>
+                    </div>
 
+                    <div class="control-group">
+                        <label class="control-label">Image Upload</label>
+                        <div class="controls">
+                            <input type="file" name="image">
+                        </div>
                     </div>
 
                     <div class="form-actions">

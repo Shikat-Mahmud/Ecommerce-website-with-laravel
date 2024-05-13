@@ -24,6 +24,7 @@ class LinkController extends Controller
         $update=$about->update([
             'title'=> $request->title,
             'description'=> $request->description,
+            'image'=> $request->file('image')->store('category'),
         ]);
 
         if($update)

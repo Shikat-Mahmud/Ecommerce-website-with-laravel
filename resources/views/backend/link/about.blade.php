@@ -41,9 +41,10 @@
 				<thead>
 					<tr>
 						<th style="width: 5%;">Id</th>
-						<th style="width: 20%;">Title</th>
+						<th style="width: 15%;">Title</th>
 						<th style="width: 50%;">Description</th>
-						<th style="width: 25%;">Actions</th>
+						<th style="width: 20%;">Image</th>
+						<th style="width: 10%;">Actions</th>
 					</tr>
 				</thead>
 				@foreach($abouts as $about)
@@ -52,6 +53,10 @@
 						<td>{{ $about->id }}</td>
 						<td class="center">{{ $about->title }}</td>
 						<td class="center">{!! $about->description !!}</td>
+						<td class="center">
+							<img src="{{ asset('/storage/' . $about->image) }}" alt="image"
+								style="width: auto; height: 100px; margin: 2px;">
+						</td>
 						<td class="row">
 							<div class="span2"></div>
 							<div class="span2">
